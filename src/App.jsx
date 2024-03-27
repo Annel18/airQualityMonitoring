@@ -1,8 +1,13 @@
-export default function App() {
+import "./styles/App.scss";
+import React from "react"
+
+function App() {
 
   return (
     <>
-      <h1>Hello Wolrd!</h1>
+      <h1>Hello World!</h1>
     </>
   );
 }
+
+export default App;
