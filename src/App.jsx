@@ -1,8 +1,7 @@
-import "./styles/App.scss";
 import React from "react";
 import { useEffect, useState } from "react";
 
-function App() {
+export default function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
