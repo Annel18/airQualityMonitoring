@@ -157,7 +157,7 @@ For more infomration, and for the terms of service, please refer to the [API ove
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Production server
-
+This static website is being hosted on GitHub Pages
 https://annel18.github.io/air-quality-monitoring/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
