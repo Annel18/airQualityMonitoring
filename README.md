@@ -133,7 +133,8 @@ Use this space to show useful examples of how a project can be used.
 - third party rest-APIs
 
 ## CI/CD
-workflow to add
+- [![build.yml][build.yml]][build.yml-url]
+- [![static.yml][static.yml]][static.yml-url]
 
 ## Production server
 
@@ -241,3 +242,7 @@ Project Link: [https://github.com/annel18/air-quality-monitoring](https://github
 [Jest-url]: https://jestjs.io/
 [testing-library]: https://img.shields.io/badge/testing_library-20232A?style=for-the-badge&logo=testinglibrary
 [ReactTesting-url]: https://testing-library.com/
+[build.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/build.yml/badge.svg
+[build.yml-url]:./.github/workflows/build.yml
+[static.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/static.yml/badge.svg
+[static.yml-url]:./.github/workflows/static.yml
