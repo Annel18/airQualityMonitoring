@@ -51,6 +51,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#CI/CD">CI/CD</a></li>
+    <li><a href="#Testing">Testing</a></li>
+    <li><a href="#Production-server">Production server</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -124,19 +127,40 @@ Use this space to show useful examples of how a project can be used.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Testing information -->
-## Testing
-- Libraries
-- How to run tests
-- what was the test coverage
-- Mocking?
-- mocking library?
-- third party rest-APIs
-
 ## CI/CD
 - [![build.yml][build.yml]][build.yml-url]
 - [![static.yml][static.yml]][static.yml-url]
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Testing
+### Libraries
+- React testing Library [![testing-library][testing-library]][ReactTesting-url]
+
+### How to run tests
+- Testing is part of the CI workflow
+- Unit tests will have to be written along coding new functions and features
+- what was the test coverage?
+
+### Mocking?
+- mocking library?
+
+### Third party rest-APIs
+- This [API](https://aqicn.org/json-api/doc/#api-_) is provided by the World Air Quality Index project.
+For more infomration, and for the terms of service, please refer to the [API overview](https://aqicn.org/api/) page.
+- Before starting the project these various enpoints have be tested with [![Insomnia][Insomnia]][Insomnia-url]. Please replace the "demo" token with your own. Get a free API Key at [https://aqicn.org/data-platform/token/](https://aqicn.org/data-platform/token/)
+    - https://api.waqi.info/feed/here/?token=demo
+    - https://api.waqi.info/feed/shanghai/?token=demo
+    - https://api.waqi.info/feed/geo:10.3;20.7/?token=demo
+    - https://api.waqi.info/v2/map/bounds?latlng=39.379436,116.091230,40.235643,116.784382&networks=all&token=demo
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Production server
+
+https://annel18.github.io/air-quality-monitoring/
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -246,3 +270,5 @@ Project Link: [https://github.com/annel18/air-quality-monitoring](https://github
 [build.yml-url]:./.github/workflows/build.yml
 [static.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/static.yml/badge.svg
 [static.yml-url]:./.github/workflows/static.yml
+[Insomnia]:https://img.shields.io/badge/insomnia-400dbf?style=for-the-badge&logo=insomnia
+[Insomnia-url]:https://insomnia.rest/
