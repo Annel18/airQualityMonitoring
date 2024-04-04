@@ -1,8 +1,8 @@
 {
     "name": "air-quality-monitoring",
-    "homepage": "https://annel18.github.io/air-quality-monitoring/",
-    "private": true,
     "version": "0.0.0",
+    "private": false,
+    "homepage": "https://annel18.github.io/air-quality-monitoring/",
     "type": "module",
     "scripts": {
         "predeploy": "npm run build",
@@ -15,6 +15,7 @@
         "test": "jest"
     },
     "dependencies": {
+        "gh-pages": "^6.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "sass": "^1.72.0"
