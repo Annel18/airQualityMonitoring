@@ -1,12 +1,16 @@
 {
     "name": "airqualitymonitoring",
-    "private": true,
     "version": "0.0.0",
+    "private": false,
+    "homepage": "https://annel18.github.io/air-quality-monitoring/",
     "type": "module",
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist",
         "dev": "vite",
-        "build": "vite build",
-        "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+        "start": "react-script start",
+        "build": "vite build --base=./",
+        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "test": "jest"
     },
