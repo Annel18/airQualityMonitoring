@@ -111,6 +111,15 @@ This is an example of how to list things you need to use the software and how to
    ```env
     API_KEY = 'ENTER YOUR API';
    ```
+5. To run locally
+    ```sh
+   npm run dev
+   ```
+5. To run in prod
+    ```sh
+   npm run build
+   npm run deploy
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,8 +137,14 @@ Use this space to show useful examples of how a project can be used.
 
 <!-- Testing information -->
 ## CI/CD
-- [![build.yml][build.yml]][build.yml-url]
-- [![static.yml][static.yml]][static.yml-url]
+- This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
+
+    [![build.yml][build.yml]][build.yml-url]
+
+- Simple workflow for deploying static content to GitHub Pages
+
+    [![static.yml][static.yml]][static.yml-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -138,9 +153,15 @@ Use this space to show useful examples of how a project can be used.
 - React testing Library [![testing-library][testing-library]][ReactTesting-url]
 
 ### How to run tests
-- Testing is part of the CI workflow
+- To run test
+  ```sh
+  npm run test
+  ```
+- Testing is part of the CI workflow, and automated test will take place on Push and Pull-Request from the main branch
+
 - Unit tests will have to be written along coding new functions and features
-- what was the test coverage?
+
+### test coverage
 
 ### Mocking?
 - mocking library?
