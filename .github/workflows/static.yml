@@ -8,7 +8,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-
     - name: Generate static files
       uses: actions/setup-node@v3
       with:
@@ -18,7 +17,7 @@ jobs:
 
     - name: Init new repo in dist folder and commit generated files
       run: |
-        cd docs/./dist
+        cd dist
         git init
         git add -A
         git config --local user.email "action@github.com"
@@ -31,4 +30,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: gh-pages
         force: true
-        directory: ./docs/./dist
+        directory: ./dist
