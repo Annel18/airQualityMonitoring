@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     - name: Generate static files
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
         node-version: '20'
     - run: npm ci
@@ -20,11 +20,8 @@ jobs:
         cd dist
         git init
         git add -A
-        # git config --local user.email "action@github.com"
         git config --local user.email "action@github.com"
-        # git config --local user.name "GitHub Action"
         git config --local user.name "GitHub Action"
-        git config --global --add safe.directory /github/workspace/dist
         git commit -m 'deploy'
 
     - name: Force push to destination branch
