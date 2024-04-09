@@ -1,24 +1,26 @@
-name: Build and Deploy
-on:
-  push:
-    branches:
-      - main
-jobs:
-  build-and-deploy:
+name: build-test-deploy
+on: push
+jobs: 
+  build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    steps: 
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: use node.js
+        uses: actions/setup-node@v3
         with:
-          persist-credentials: false
-
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+          node-version: '20.x'
+      - run: npm install
+      - run: npm run build
+  test: 
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: use node.js
+        uses: actions/setup-node@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
+          node-version: '20.x'
+      - run: npm install
+      - run: npm test
