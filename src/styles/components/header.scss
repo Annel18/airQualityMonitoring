@@ -22,3 +22,7 @@
       }
   }
 }
+
+.navbar-drop {
+  @include flex(row, center, flex-end);
+}

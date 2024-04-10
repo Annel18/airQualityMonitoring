@@ -2,12 +2,12 @@
 import { Spinner } from 'react-bootstrap'
 import { Outlet, useNavigation } from 'react-router-dom'
 
-import Header from './components/header'
+import Navbar from './components/Navbar'
 
 
 export default function App() {
   //! States
-  const navigation = useNavigation()
+  // const navigation = useNavigation()
   //! Effects
 
   //! Functions
@@ -15,16 +15,17 @@ export default function App() {
   //! JSX
   return (
     <>
-      <Header />
+      <Navbar />
       <main>
-        {
+        <h1>Hello World!</h1>
+        {/* {
           navigation.state === 'idle' ?
             <Outlet />
             :
             <section className='spinner'>
               <Spinner />
             </section>
-        }
+        } */}
       </main>
 
     </>
