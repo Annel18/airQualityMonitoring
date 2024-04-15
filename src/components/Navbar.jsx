@@ -34,7 +34,7 @@ export default function Navbar() {
               onChange={handleChange}
               autoWidth
               label="Feed Type"
-              placeholder="Real-Time"
+              // placeholder="Real-Time"
               style={{ fontFamily: 'Futura', fontSize: 'xx-large', fontWeight: '800', color: 'white' }}
             >
               <MenuItem

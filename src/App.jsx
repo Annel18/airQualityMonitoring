@@ -7,7 +7,7 @@ import Navbar from './components/Navbar'
 
 export default function App() {
   //! States
-  // const navigation = useNavigation()
+  const navigation = useNavigation()
   //! Effects
 
   //! Functions
@@ -17,17 +17,16 @@ export default function App() {
     <>
       <Navbar />
       <main>
-        <h1>Hello World!</h1>
-        {/* {
+        {
           navigation.state === 'idle' ?
             <Outlet />
             :
-            <section className='spinner'>
+            <div className='spinner'>
               <Spinner />
-            </section>
-        } */}
+            </div>
+        }
       </main>
 
     </>
-  );
+  )
 }

@@ -6,7 +6,7 @@ describe("App", () => {
 
     it("renders App component", async () => {
         render(<App />);
-        const linkElement = await screen.findByText(/Hello World!/i);
+        const linkElement = await screen.findByText(/Air Quality Monitoring/i);
         expect(linkElement).toBeInTheDocument();
     });
 });
