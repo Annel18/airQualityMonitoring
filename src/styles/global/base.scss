@@ -4,49 +4,17 @@
 }
 
 html {
-    // font-size: 16px;
+    font-size: 16px;
     min-width: min-content;
 }
 
 body {
     margin: 0;
-    // to allow for footer
-    // margin-bottom: 60px;
 }
 
 main {
     min-height: calc(100vh - 66.25px);
-    // height: 100vh;
-    // background-color: rgba(255,255,255,50%);
-    // background-image: url('https://res.cloudinary.com/ddzwh699a/image/upload/v1705247153/GA-SEI-P4-RDS/background-1920x1080.jpg');
-    // background-blend-mode: overlay;
-    // background-position: center;
-    // // background-repeat: none;
-    // // background-size: contain;
-}
 
-form input,
-select {
-    @include button($secondary-color, white);
-    width: 400px;
-    padding: 10px;
-    margin: 5px;
-}
-
-form button {
-    margin: 20px;
-    padding: 6px 40px;
-    @include button(white, $secondary-color);
-}
-
-form button:hover {
-    margin: 20px;
-    padding: 6px 40px;
-    @include button($secondary-color, white);
-}
-
-form {
-    @include flex(column, center, center);
 }
 
 .spinner {
