@@ -4,7 +4,7 @@
 $primary-color: #b3b3b3;
 $secondary-color: lightcoral;
 $tertiary-color: rgb(100, 186, 186);
-$navBar-color: lightcoral;
+$navBar-color: rgb(0, 0, 0);
 
 @mixin flex($direction, $align, $justify) {
     display: flex;

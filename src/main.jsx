@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 
 //! Loaders
-import { getCityFeed } from './utils/loaders/getCityFeed.js'
+// import { getCityFeed } from './utils/loaders/getCityFeed.js'
 
 //! Styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,12 +21,12 @@ const router = createBrowserRouter([
           {
               path: '/',
               element: <App />,
-              // loader: getTvIndex,
+              // loader: getCityFeed,
           },
           {
               path: '/forecast',
               element: <App />,
-              // loader: getTvIndex,
+              // loader: getCityFeed,
           }
       ]
   }
