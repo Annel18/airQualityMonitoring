@@ -1,14 +1,33 @@
+//! Imports
+import { Spinner } from 'react-bootstrap'
+import { Outlet, useNavigation } from 'react-router-dom'
+
+import Navbar from './components/Navbar'
 import Footer from "./components/Footer"
 
+
 export default function App() {
+  //! States
+  const navigation = useNavigation()
+  //! Effects
 
+  //! Functions
 
-    return (
-        <>
-            <h1>Hello World!</h1>
-            <p>test</p>
-            <Footer/>
-
-        </>
-    );
+  //! JSX
+  return (
+    <>
+      <Navbar />
+      <main>
+        {
+          navigation.state === 'idle' ?
+            <Outlet />
+            :
+            <div className='spinner'>
+              <Spinner />
+            </div>
+        }
+      </main>
+      <Footer />
+    </>
+  )
 }
