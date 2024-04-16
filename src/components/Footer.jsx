@@ -1,5 +1,6 @@
 export default function Footer() {
 
+  // this array of objects my have to be moved in App.jsx instead and passed through with props.. depending further development and if needed for other components
   const airQualityLevels = [
     {
       aqi: '0 - 50',
@@ -34,22 +35,37 @@ export default function Footer() {
     }
   ]
 
+  const aqiColorKey = [
+    { aqi: '0 - 25', backgroundColor: '#00787d', color:'white' },
+    { aqi: '25 - 50', backgroundColor: '#009b67', color:'white' },
+    { aqi: '50 - 75', backgroundColor: '#7fbe54', color:'black' },
+    { aqi: '75 - 100', backgroundColor: '#ffde4c', color:'black' },
+    { aqi: '100 - 125', backgroundColor: '#ffbb46', color:'black' },
+    { aqi: '125 - 150', backgroundColor: '#ff9643', color:'black' },
+    { aqi: '150 - 175', backgroundColor: '#eb4a3b', color:'white' },
+    { aqi: '175 - 200', backgroundColor: '#d1003a', color:'white' },
+    { aqi: '200 - 300', backgroundColor: '#9c0067', color:'white' },
+    { aqi: '300 - 400', backgroundColor: '#7c003f', color:'white' },
+    { aqi: '>400', backgroundColor: '#510017', color:'white' },
+  ]
 
   return (
     <footer>
       <div className="levels-key">
-        {airQualityLevels.map(level => {
-          return(
-            <p>{level.aqi}</p>
+        {aqiColorKey.map(level => {
+          const colorKey = level.backgroundColor
+          const textColor = level.color
+          return (
+            <p className="levels-aqi"
+              style={{ backgroundColor: colorKey, color: textColor }}
+            >{level.aqi}</p>
           )
         })
         }
       </div>
       <nav className="footer-nav">
         <a href="">About </a>
-        <p>|</p>
         <a href="">Resources</a>
-        <p>|</p>
         <a href="">Source Code</a>
       </nav>
     </footer>

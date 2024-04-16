@@ -1,0 +1,24 @@
+footer > *{
+  justify-content: center;
+}
+
+.levels-key{
+  display: flex;
+}
+
+.levels-aqi{
+  padding: 1rem;
+  // background-color: red;
+  // color: white;
+  width: 5rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.footer-nav{
+  border-top: 1px solid black;
+  display: flex;
+  a{
+    padding: 1rem;
+  }
+}
