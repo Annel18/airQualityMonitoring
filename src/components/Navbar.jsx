@@ -23,10 +23,7 @@ export default function Navbar() {
         </div>
         <div className='navbar-menu'>
           <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <InputLabel
-              id="demo-simple-select-autowidth-label"
-              style={{ fontFamily: 'Futura', fontSize: 'x-large', color: 'white' }}
-            >Feed Type</InputLabel>
+            <InputLabel id="demo-simple-select-autowidth-label">Feed Type</InputLabel>
             <Select
               labelId="demo-simple-select-autowidth-label"
               id="demo-simple-select-autowidth"
@@ -34,22 +31,18 @@ export default function Navbar() {
               onChange={handleChange}
               autoWidth
               label="Feed Type"
-              // placeholder="Real-Time"
-              style={{ fontFamily: 'Futura', fontSize: 'xx-large', fontWeight: '800', color: 'white' }}
             >
               <MenuItem
                 as={Link}
                 to="/"
                 className='navbar-drop'
                 value={'Real-Time'}
-                style={{ fontFamily: 'Futura', fontSize: 'xx-large', fontWeight: '800' }}
               >Real-Time</MenuItem>
               <MenuItem
                 as={Link}
                 to="/forecast/"
                 className='navbar-drop'
                 value={'Forecast'}
-                style={{ fontFamily: 'Futura', fontSize: 'xx-large', fontWeight: '800' }}
               >Forecast</MenuItem>
             </Select>
           </FormControl>
