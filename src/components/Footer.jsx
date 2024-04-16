@@ -36,28 +36,26 @@ export default function Footer() {
   ]
 
   const aqiColorKey = [
-    { aqi: '0 - 25', backgroundColor: '#00787d', color:'white' },
-    { aqi: '25 - 50', backgroundColor: '#009b67', color:'white' },
-    { aqi: '50 - 75', backgroundColor: '#7fbe54', color:'black' },
-    { aqi: '75 - 100', backgroundColor: '#ffde4c', color:'black' },
-    { aqi: '100 - 125', backgroundColor: '#ffbb46', color:'black' },
-    { aqi: '125 - 150', backgroundColor: '#ff9643', color:'black' },
-    { aqi: '150 - 175', backgroundColor: '#eb4a3b', color:'white' },
-    { aqi: '175 - 200', backgroundColor: '#d1003a', color:'white' },
-    { aqi: '200 - 300', backgroundColor: '#9c0067', color:'white' },
-    { aqi: '300 - 400', backgroundColor: '#7c003f', color:'white' },
-    { aqi: '>400', backgroundColor: '#510017', color:'white' },
+    { aqi: '0 - 25', backgroundColor: '#00787d', textColor:'white' },
+    { aqi: '25 - 50', backgroundColor: '#009b67', textColor:'white' },
+    { aqi: '50 - 75', backgroundColor: '#7fbe54', textColor:'black' },
+    { aqi: '75 - 100', backgroundColor: '#ffde4c', textColor:'black' },
+    { aqi: '100 - 125', backgroundColor: '#ffbb46', textColor:'black' },
+    { aqi: '125 - 150', backgroundColor: '#ff9643', textColor:'black' },
+    { aqi: '150 - 175', backgroundColor: '#eb4a3b', textColor:'white' },
+    { aqi: '175 - 200', backgroundColor: '#d1003a', textColor:'white' },
+    { aqi: '200 - 300', backgroundColor: '#9c0067', textColor:'white' },
+    { aqi: '300 - 400', backgroundColor: '#7c003f', textColor:'white' },
+    { aqi: '>400', backgroundColor: '#510017', textColor:'white' },
   ]
 
   return (
     <footer>
       <div className="levels-key">
         {aqiColorKey.map((level,i) => {
-          const colorKey = level.backgroundColor
-          const textColor = level.color
           return (
             <p key={i} className="levels-aqi"
-              style={{ backgroundColor: colorKey, color: textColor }}
+              style={{ backgroundColor: level.backgroundColor, color: level.textColor }}
             >{level.aqi}</p>
           )
         })
