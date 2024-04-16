@@ -4,7 +4,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: 15px;
     min-width: min-content;
 }
 
@@ -24,8 +24,3 @@ main {
     @include flex(row, center, center);
 }
 
-a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: $primary-color;
-}

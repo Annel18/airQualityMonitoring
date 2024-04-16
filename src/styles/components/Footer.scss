@@ -9,22 +9,19 @@ footer{
 }
 footer > *{
   justify-content: center;
-  @media (min-width: 600px) {
-   padding: 0 5rem;
-  }
 }
 
 .levels-key{
   display: flex;
+  max-width: 600px;
 }
 
 .levels-aqi{
   padding: 0.5rem;
-  // background-color: red;
-  // color: white;
-  width: 7rem;
+  font-size: 8px;
+  width: calc(600px / 11);
   text-align: center;
-  margin: 1rem 0.2rem;
+  margin: 1rem 0.1rem;
 }
 
 .footer-nav{
@@ -32,6 +29,8 @@ footer > *{
   display: flex;
   align-items: baseline;
   a{
+    text-decoration: none;
+    color: $primary-color;
     padding: 1rem;
   }
 
