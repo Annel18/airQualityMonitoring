@@ -13,11 +13,19 @@ body {
 }
 
 main {
-    min-height: calc(100vh - 66.25px);
-
+    // min-height: calc(100vh - 126.94px - 169.41px);
+    @media (min-width: 600px) {
+      min-height: calc(100vh - 126.94px - 73.45px);
+    }
 }
 
 .spinner {
     padding-top: 5em;
     @include flex(row, center, center);
+}
+
+a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: $primary-color;
 }

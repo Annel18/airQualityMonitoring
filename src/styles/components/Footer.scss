@@ -1,5 +1,17 @@
+footer{
+  @media (min-width: 600px) {
+    border-top: 1px solid black;
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    justify-content:center;
+  }
+}
 footer > *{
   justify-content: center;
+  @media (min-width: 600px) {
+   padding: 0 5rem;
+  }
 }
 
 .levels-key{
@@ -7,18 +19,23 @@ footer > *{
 }
 
 .levels-aqi{
-  padding: 1rem;
+  padding: 0.5rem;
   // background-color: red;
   // color: white;
-  width: 5rem;
+  width: 7rem;
   text-align: center;
-  margin: 1rem;
+  margin: 1rem 0.2rem;
 }
 
 .footer-nav{
   border-top: 1px solid black;
   display: flex;
+  align-items: baseline;
   a{
     padding: 1rem;
+  }
+
+  @media (min-width: 600px) {
+    border-top: none;
   }
 }

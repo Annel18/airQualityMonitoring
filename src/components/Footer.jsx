@@ -52,11 +52,11 @@ export default function Footer() {
   return (
     <footer>
       <div className="levels-key">
-        {aqiColorKey.map(level => {
+        {aqiColorKey.map((level,i) => {
           const colorKey = level.backgroundColor
           const textColor = level.color
           return (
-            <p className="levels-aqi"
+            <p key={i} className="levels-aqi"
               style={{ backgroundColor: colorKey, color: textColor }}
             >{level.aqi}</p>
           )
@@ -64,9 +64,13 @@ export default function Footer() {
         }
       </div>
       <nav className="footer-nav">
+      <p>|</p>
         <a href="">About </a>
+        <p>|</p>
         <a href="">Resources</a>
+        <p>|</p>
         <a href="">Source Code</a>
+        <p>|</p>
       </nav>
     </footer>
   )
