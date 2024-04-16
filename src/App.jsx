@@ -1,3 +1,5 @@
+import Footer from "./components/Footer"
+
 export default function App() {
 
 
@@ -5,6 +7,7 @@ export default function App() {
         <>
             <h1>Hello World!</h1>
             <p>test</p>
+            <Footer/>
 
         </>
     );
