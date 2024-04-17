@@ -8,11 +8,14 @@ import PageRealTime from './components/PageRealTime.jsx'
 import PageForecast from './components/PageForecast.jsx'
 
 //! Loaders
-// import { getCityFeed } from './utils/loaders/getCityFeed.js'
+import { getCityFeed } from './utils/loaders/getCityFeed.js'
 
 //! Styles
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/main.scss'
+
+//! Access environment variable
+const token = import.meta.env.VITE_TOKEN
 
 //! Router
 const router = createBrowserRouter([
@@ -23,7 +26,7 @@ const router = createBrowserRouter([
           {
               path: '/',
               element: <PageRealTime />,
-              // loader: getCityFeed,
+              loader: async ({ params }) => getCityFeed(token),
           },
           {
               path: '/forecast',
