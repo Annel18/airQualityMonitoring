@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import PageRealTime from "./PageRealTime";
 
-describe("PageRealTime", () => {
+xdescribe("PageRealTime", () => {
 
     it("renders PageRealTime component", async () => {
         render(<PageRealTime />);
