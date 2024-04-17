@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 
 import Navbar from "./Navbar";
 
-xdescribe("Navbar", () => {
+describe("Navbar", () => {
 
     it("renders Navbar component", async () => {
         render(<Navbar />);
