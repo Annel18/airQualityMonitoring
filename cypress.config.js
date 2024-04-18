@@ -6,7 +6,7 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
-
+  projectId: "ea5f2o",
   component: {
     devServer: {
       framework: "react",
