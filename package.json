@@ -5,7 +5,7 @@
   "homepage": "https://annel18.github.io/air-quality-monitoring/",
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "vite",
     "build": "vite build --base=./",
     "preview": "vite preview",
     "predeploy": "npm run build",
