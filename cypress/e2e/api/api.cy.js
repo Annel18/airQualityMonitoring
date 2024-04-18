@@ -4,7 +4,7 @@ describe("Check https://api.publicapis.org/entries request", () => {
     it("Get 200 status", () => {
         cy.request({
             method: "GET",
-            url: `https://api.publicapis.org/entries`,
+            url: `https://api.waqi.info/feed/shanghai/?token=demo`,
         }).as("getEntries");
 
         cy.get("@getEntries").should((response) => {
