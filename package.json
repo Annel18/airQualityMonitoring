@@ -5,8 +5,8 @@
   "homepage": "https://annel18.github.io/air-quality-monitoring/",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
+    "start": "react-script start",
+    "build": "vite build --base=./",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
