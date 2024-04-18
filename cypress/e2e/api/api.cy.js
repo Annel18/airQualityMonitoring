@@ -1,6 +1,6 @@
 
 // About API testing: https://docs.cypress.io/api/commands/request#Method-and-URL
-describe("Check https://api.publicapis.org/entries request", () => {
+describe("Check https://api.waqi.info/feed/shanghai/?token=demo request", () => {
     it("Get 200 status", () => {
         cy.request({
             method: "GET",
