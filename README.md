@@ -147,6 +147,10 @@ For more information see: https://docs.github.com/en/actions/publishing-packages
 
     [![static.yml][static.yml]][static.yml-url]
 
+- Cypress runs tests in parallel with matrix strategy 
+
+    [![cypress.yml][cypress.yml]][cypress.yml-url]
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Testing
@@ -304,5 +308,7 @@ Project Link: [https://github.com/annel18/air-quality-monitoring](https://github
 [build.yml-url]:./.github/workflows/build.yml
 [static.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/static.yml/badge.svg
 [static.yml-url]:./.github/workflows/static.yml
+[cypress.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/cypress.yml/badge.svg
+[cypress.yml-url]:./.github/workflows/cypress.yml
 [Insomnia]:https://img.shields.io/badge/insomnia-400dbf?style=for-the-badge&logo=insomnia
 [Insomnia-url]:https://insomnia.rest/
