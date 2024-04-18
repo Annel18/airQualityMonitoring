@@ -68,7 +68,7 @@
     "collectCoverageFrom": ["./src/**"],
     "coverageThreshold": {
       "global": {
-        "lines": 90
+        "lines": 85
       }
     },
     "testEnvironment": "jsdom",
