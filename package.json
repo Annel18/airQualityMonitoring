@@ -64,6 +64,13 @@
     "vite": "^4.0.0"
   },
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["./src/**"],
+    "coverageThreshold": {
+      "global": {
+        "lines": 90
+      }
+    },
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
       "^.+\\.svg$": "jest-svg-transformer",
