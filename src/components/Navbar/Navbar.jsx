@@ -19,7 +19,7 @@ export default function Navbar() {
     <header>
       <nav className="navbar">
         <div className="navbar-menu">
-          <Link className="navbar-button" to="/" onClick={handleChange}>Air Quality App</Link>
+          <div className="navbar-button">Air Quality App</div>
         </div>
         <div className='navbar-menu'>
           <FormControl sx={{ m: 1, minWidth: 250 }}>
