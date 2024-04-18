@@ -178,6 +178,8 @@ npx cypress open
 ```
 - To Run test 
 
+Tests can be monitored on the cloud https://cloud.cypress.io/
+
 ### Mocking?
 - mocking library?
 
