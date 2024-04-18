@@ -1,5 +1,5 @@
 //! Imports
-import { Spinner } from 'react-bootstrap'
+import { MySpinner } from './components'
 import { Outlet, useNavigation } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
