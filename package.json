@@ -65,10 +65,13 @@
   },
   "jest": {
     "collectCoverage": true,
-    "collectCoverageFrom": ["./src/**"],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/main.jsx"
+    ],
     "coverageThreshold": {
       "global": {
-        "lines": 70
+        "lines": 85
       }
     },
     "testEnvironment": "jsdom",
