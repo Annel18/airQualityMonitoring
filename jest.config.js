@@ -1,4 +1,3 @@
-/* @type {import('jest').Config} */
 const config = {
   setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   moduleNameMapper: {
@@ -8,13 +7,13 @@ const config = {
   testEnvironment: 'jsdom',
   moduleDirectories: ['node_modules', 'src'],
   verbose: true,
-  // collectCoverage: true,
-  // collectCoverageFrom: ["./src/**"],
-  // coverageThreshold: {
-  //   global: {
-  //     lines: 85
-  //   }
-  // }
+  collectCoverage: true,
+  collectCoverageFrom: ["./src/**"],
+  coverageThreshold: {
+    global: {
+      lines: 30
+    }
+  }
 }
 
 export default config

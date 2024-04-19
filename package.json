@@ -12,13 +12,13 @@
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
+    "prepare": "husky",
     "test": "jest",
     "cy:open-e2e": "cypress open --e2e --browser chrome",
     "cy:open-unit": "cypress open --component --browser chrome",
     "cy:run-e2e": "cypress run --e2e",
     "cy:run-unit": "cypress run --component",
-    "cy:e2e": "start-server-and-test start http-get://localhost:3000 cy:open-e2e",
-    "prepare": "husky"
+    "cy:e2e": "start-server-and-test start http-get://localhost:3000 cy:open-e2e"
   },
   "dependencies": {
     "-": "^0.0.1",
