@@ -7,5 +7,9 @@ export default defineConfig({
     include: ['esm-dep > cjs-dep'],
   },
   plugins: [react()],
+  server: {
+    host: true,
+    port: 3000,
+  },
   // base: './',
 })

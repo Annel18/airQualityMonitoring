@@ -1,62 +1,103 @@
 {
-    "name": "airqualitymonitoring",
-    "version": "0.0.0",
-    "private": false,
-    "homepage": "https://annel18.github.io/air-quality-monitoring/",
-    "type": "module",
-    "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d dist",
-        "dev": "vite",
-        "start": "react-script start",
-        "build": "vite build --base=./",
-        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-        "preview": "vite preview",
-        "test": "jest"
+  "name": "airqualitymonitoring",
+  "version": "0.0.0",
+  "private": false,
+  "homepage": "https://annel18.github.io/air-quality-monitoring/",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build --base=./",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "dev": "vite",
+    "lint": "eslint --fix --ext .ts,.tsx ./src",
+    "test": "jest",
+    "cy:open-e2e": "cypress open --e2e --browser chrome",
+    "cy:open-unit": "cypress open --component --browser chrome",
+    "cy:run-e2e": "cypress run --e2e",
+    "cy:run-unit": "cypress run --component",
+    "cy:e2e": "start-server-and-test start http-get://localhost:3000 cy:open-e2e",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "-": "^0.0.1",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.15",
+    "bootstrap": "^5.3.3",
+    "gh-pages": "^6.1.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.72.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.3",
+    "@babel/preset-react": "^7.24.1",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@cypress/react18": "^2.0.0",
+    "@jest/globals": "^29.7.0",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.2",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "actions": "^1.3.0",
+    "ci": "^2.3.0",
+    "cypress": "^13.7.3",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "husky": "^9.0.11",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jest-svg-transformer": "^1.0.0",
+    "lint-staged": "^15.2.2",
+    "react-test-renderer": "^18.2.0",
+    "start-server-and-test": "^2.0.3",
+    "vite": "^4.0.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/main.jsx"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 85
+      }
     },
-    "dependencies": {
-        "@emotion/react": "^11.11.4",
-        "@emotion/styled": "^11.11.5",
-        "@mui/material": "^5.15.15",
-        "bootstrap": "^5.3.3",
-        "gh-pages": "^6.1.1",
-        "mui": "^0.0.1",
-        "react": "^18.2.0",
-        "react-bootstrap": "^2.10.2",
-        "react-dom": "^18.2.0",
-        "react-router-dom": "^6.22.3",
-        "sass": "^1.72.0"
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "^.+\\.svg$": "jest-svg-transformer",
+      "^.+\\.(css|less|scss)$": "identity-obj-proxy"
     },
-    "devDependencies": {
-        "@babel/preset-env": "^7.24.3",
-        "@babel/preset-react": "^7.24.1",
-        "@jest/globals": "^29.7.0",
-        "@testing-library/jest-dom": "^6.4.2",
-        "@testing-library/react": "^14.2.2",
-        "@types/react": "^18.2.66",
-        "@types/react-dom": "^18.2.22",
-        "@vitejs/plugin-react-swc": "^3.5.0",
-        "actions": "^1.3.0",
-        "ci": "^2.3.0",
-        "eslint": "^8.57.0",
-        "eslint-plugin-react": "^7.34.1",
-        "eslint-plugin-react-hooks": "^4.6.0",
-        "eslint-plugin-react-refresh": "^0.4.6",
-        "identity-obj-proxy": "^3.0.0",
-        "jest": "^29.7.0",
-        "jest-environment-jsdom": "^29.7.0",
-        "jest-svg-transformer": "^1.0.0",
-        "react-test-renderer": "^18.2.0",
-        "vite": "^5.2.0"
-    },
-    "jest": {
-        "testEnvironment": "jsdom",
-        "moduleNameMapper": {
-            "^.+\\.svg$": "jest-svg-transformer",
-            "^.+\\.(css|less|scss)$": "identity-obj-proxy"
-        },
-        "setupFilesAfterEnv": [
-            "<rootDir>/setupTests.js"
-        ]
-    }
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint"
+    ]
+  }
 }

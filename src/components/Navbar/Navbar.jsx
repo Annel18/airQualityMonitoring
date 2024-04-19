@@ -19,7 +19,7 @@ export default function Navbar() {
     <header>
       <nav className="navbar">
         <div className="navbar-menu">
-          <Link className="navbar-button" to="/" onClick={handleChange}>Air Quality App</Link>
+          <div className="navbar-button">Air Quality App</div>
         </div>
         <div className='navbar-menu'>
           <FormControl sx={{ m: 1, minWidth: 250 }}>
@@ -31,19 +31,19 @@ export default function Navbar() {
               onChange={handleChange}
               autoWidth
               label="Feed Type"
-            >
+              >
               <MenuItem
                 as={Link}
                 to="/"
                 className='navbar-drop'
                 value={'Real-Time'}
-              >Real-Time</MenuItem>
+                >Real-Time</MenuItem>
               <MenuItem
                 as={Link}
                 to="/forecast/"
                 className='navbar-drop'
                 value={'Forecast'}
-              >Forecast</MenuItem>
+                >Forecast</MenuItem>
             </Select>
           </FormControl>
         </div>
