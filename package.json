@@ -57,17 +57,6 @@
     "start-server-and-test": "^2.0.3",
     "vite": "^4.0.0"
   },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "^.+\\.svg$": "jest-svg-transformer",
-      "^.+\\.(css|less|scss)$": "identity-obj-proxy"
-    },
-    "setupFilesAfterEnv": [
-      "<rootDir>/setupTests.js"
-    ]
-
-  },
   "browserslist": {
     "production": [
       ">0.2%",
