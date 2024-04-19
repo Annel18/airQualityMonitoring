@@ -12,13 +12,13 @@
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
-    "prepare": "husky",
     "test": "jest",
     "cy:open-e2e": "cypress open --e2e --browser chrome",
     "cy:open-unit": "cypress open --component --browser chrome",
     "cy:run-e2e": "cypress run --e2e",
     "cy:run-unit": "cypress run --component",
-    "cy:e2e": "start-server-and-test start http-get://localhost:3000 cy:open-e2e"
+    "cy:e2e": "start-server-and-test start http-get://localhost:3000 cy:open-e2e",
+    "prepare": "husky"
   },
   "dependencies": {
     "-": "^0.0.1",
@@ -56,6 +56,23 @@
     "react-test-renderer": "^18.2.0",
     "start-server-and-test": "^2.0.3",
     "vite": "^4.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleNameMapper": {
+      "^.+\\.svg$": "jest-svg-transformer",
+      "^.+\\.(css|less|scss)$": "identity-obj-proxy"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": ["./src/**"],
+    "coverageThreshold": {
+      "global": {
+        "lines": 30
+      }
+    }
   },
   "browserslist": {
     "production": [
