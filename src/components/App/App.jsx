@@ -1,11 +1,25 @@
+//! Imports
+
+import { Outlet } from 'react-router-dom'
+
+import Navbar from '../Navbar/index'
+
+
 export default function App() {
+  //! States
 
+  //! Effects
 
-    return (
-        <>
-            <h1>Hello World!</h1>
-            <p>test</p>
+  //! Functions
 
-        </>
-    );
+  //! JSX
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+
+    </>
+  )
 }

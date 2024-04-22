@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Futura','HelveticaNeue';
+}
+
+html {
+    // font-size: 16px;
+    min-width: min-content;
+}
+
+body {
+    margin: 0;
+    // to allow for footer
+    // margin-bottom: 60px;
+}
+
+main {
+    // min-height: calc(100vh - 126.94px - 169.41px);
+    @media (min-width: 600px) {
+      min-height: calc(100vh - 126.94px - 73.45px);
+    }
+}
+
+.spinner {
+    padding-top: 5em;
+    @include flex(row, center, center);
+}
