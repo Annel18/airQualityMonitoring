@@ -2,7 +2,7 @@
   "name": "airqualitymonitoring",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://annel18.github.io/air-quality-monitoring",
+  "homepage": "https://annel18.github.io/air-quality-monitoring/",
   "type": "module",
   "scripts": {
     "start": "vite",
