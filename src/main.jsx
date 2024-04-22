@@ -32,7 +32,10 @@ const router = createBrowserRouter([
           }
       ]
   }
-]
+],
+{
+  basename: '/air-quality-monitoring/'
+}
 )
 
 createRoot(document.getElementById('root')).render(
