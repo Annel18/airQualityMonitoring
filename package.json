@@ -6,11 +6,11 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "dev": "vite", 
-    "build": "vite build",
+    "build": "vite build --base=./",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+    "dev": "vite",
     "lint": "eslint --fix --ext .ts,.tsx ./src",
     "test": "jest",
     "cy:open-e2e": "cypress open --e2e --browser chrome",
