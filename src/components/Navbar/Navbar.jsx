@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 export default function Navbar() {
   //! States
-  const [redirection, setRedirection] = useState('Real-Time')
+  const [redirection, setRedirection] = useState('real-time')
 
   //! Functions
   const handleChange = (event) => {
@@ -36,13 +36,13 @@ export default function Navbar() {
                 as={Link}
                 to="/"
                 className='navbar-drop'
-                value={'Real-Time'}
+                value={'real-time'}
                 >Real-Time</MenuItem>
               <MenuItem
                 as={Link}
                 to="/forecast/"
                 className='navbar-drop'
-                value={'Forecast'}
+                value={'forecast'}
                 >Forecast</MenuItem>
             </Select>
           </FormControl>
