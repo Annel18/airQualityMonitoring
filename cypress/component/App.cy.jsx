@@ -1,5 +1,5 @@
 import React from 'react'
-import App from './App'
+import App from '../../src/App'
 import { mount } from '@cypress/react18'
 
 describe('<App />', () => {
