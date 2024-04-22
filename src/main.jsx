@@ -1,10 +1,40 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './styles/App.scss'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+//! Components
+import App from './components/App/index.js'
+import PageRealTime from './components/PageRealTime/index.js'
+import PageForecast from './components/PageForecast/index.js'
+
+//! Loaders
+// import { getCityFeed } from './utils/loaders/getCityFeed.js'
+
+//! Styles
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/main.scss'
+
+//! Router
+const router = createBrowserRouter([
+  {
+      path: '/',
+      element: <App />,
+      children: [
+          {
+              path: '/',
+              element: <PageRealTime />,
+              // loader: getCityFeed,
+          },
+          {
+              path: '/forecast',
+              element: <PageForecast />,
+              // loader: getCityFeed,
+          }
+      ]
+  }
+]
+)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <RouterProvider router={router} />
 )

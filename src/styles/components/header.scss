@@ -1,0 +1,60 @@
+.navbar {
+  @include flex(row, center, space-between);
+  background-color: $navBar-color;
+  padding: 1rem 5rem;
+}
+
+.navbar-menu {
+  @include flex(row, center, flex-start);
+
+  #demo-simple-select-autowidth-label {
+    font-family: 'Futura';
+    color: white;
+  }
+
+  #demo-simple-select-autowidth {
+    font-family: 'Futura';
+    font-size: x-large;
+    font-weight: 800;
+    color: white;
+  }
+
+  .navbar-button {
+      // padding-right: 5em;
+      color: white;
+      font-weight: 800;
+      font-size: xx-large;
+      border: none;
+      background-color: transparent;
+      text-decoration: none;
+
+      Select {
+        MenuItem {
+          color: black;
+          font-weight: 800;
+          font-size: x-large;
+          border: none;
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
+
+      @media (max-width: 576px) {
+          padding: 10px;
+          font-size: 16x;
+      }
+  }
+  svg{
+    color:white;
+  }
+  fieldset{
+    border-color: white;
+  }
+}
+
+.navbar-drop {
+  color: black;
+  font-weight: 800 !important;
+  font-size: x-large !important;
+  font-family: 'Futura' !important;
+}
