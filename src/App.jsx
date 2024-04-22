@@ -1,8 +1,8 @@
 //! Imports
 
-import { Outlet } from 'react-router-dom'
+// import { Outlet } from 'react-router-dom'
 
-import Navbar from './components/Navbar'
+// import Navbar from './components/Navbar'
 
 
 export default function App() {
@@ -15,9 +15,10 @@ export default function App() {
   //! JSX
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <main>
-        <Outlet />
+        <h1>Hello World!</h1>
+        {/* <Outlet /> */}
       </main>
 
     </>

@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 //! Components
 import App from './App.jsx'
-import PageRealTime from './components/PageRealTime.jsx'
-import PageForecast from './components/PageForecast.jsx'
+// import PageRealTime from './components/PageRealTime.jsx'
+// import PageForecast from './components/PageForecast.jsx'
 
 //! Loaders
 // import { getCityFeed } from './utils/loaders/getCityFeed.js'
@@ -22,12 +22,12 @@ const router = createBrowserRouter([
       children: [
           {
               path: '/',
-              element: <PageRealTime />,
+              // element: <PageRealTime />,
               // loader: getCityFeed,
           },
           {
               path: '/forecast',
-              element: <PageForecast />,
+              // element: <PageForecast />,
               // loader: getCityFeed,
           }
       ]

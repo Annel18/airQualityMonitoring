@@ -6,7 +6,7 @@ describe("App", () => {
 
     it("renders App component", async () => {
         render(<App />);
-        const linkElement = await screen.findByText(/air/i);
+        const linkElement = await screen.findByText(/Hello/i);
         expect(linkElement).toBeInTheDocument();
     });
 });
