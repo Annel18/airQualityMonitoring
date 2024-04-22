@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/annel18/air-quality-monitoring">
-    <img src="./src/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./src/assets/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Air Quality Monitoring</h3>
@@ -51,9 +51,9 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#CI/CD">CI/CD</a></li>
-    <li><a href="#Testing">Testing</a></li>
-    <li><a href="#Production-server">Production server</a></li>
+    <li><a href="#cicd">CI/CD</a></li>
+    <li><a href="#testing">Testing</a></li>
+    <li><a href="#production-server">Production server</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -79,6 +79,7 @@
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![Jest][Jest.js]][Jest-url]
 * [![testing-library][testing-library]][ReactTesting-url]
+* [![Cypress][Cypress]][Cypress-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,13 +147,17 @@ For more information see: https://docs.github.com/en/actions/publishing-packages
 
     [![static.yml][static.yml]][static.yml-url]
 
+- Cypress runs tests in parallel with matrix strategy 
+
+    [![cypress.yml][cypress.yml]][cypress.yml-url]
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Testing
 ### Libraries
 - React testing Library [![testing-library][testing-library]][ReactTesting-url]
 
-### How to run tests
+### How to run test suites
 - To run test
   ```sh
   npm run test
@@ -161,7 +166,19 @@ For more information see: https://docs.github.com/en/actions/publishing-packages
 
 - Unit tests will have to be written along coding new functions and features
 
-### test coverage
+### How to run tests with Cypress
+- Installing 
+```sh
+cd /your/project/path
+npm install cypress --save-dev
+```
+- Opening the app
+```sh
+npx cypress open
+```
+- To Run test 
+
+Tests can be monitored on the cloud https://cloud.cypress.io/
 
 ### Mocking?
 - mocking library?
@@ -260,7 +277,7 @@ Project Link: [https://github.com/annel18/air-quality-monitoring](https://github
 [license-url]: https://github.com/annel18/air-quality-monitoring/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/annelaure-guiot
-[product-screenshot]: ./src/images/screenshot.png
+[product-screenshot]: ./src/assets/images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
@@ -285,11 +302,15 @@ Project Link: [https://github.com/annel18/air-quality-monitoring](https://github
 [Sass-url]: https://sass-lang.com/
 [Jest.js]: https://img.shields.io/badge/jest-16c213?style=for-the-badge&logo=jest
 [Jest-url]: https://jestjs.io/
+[Cypress]: https://img.shields.io/badge/cypress-f4f6f7?style=for-the-badge&logo=cypress
+[Cypress-url]: https://www.cypress.io/
 [testing-library]: https://img.shields.io/badge/testing_library-20232A?style=for-the-badge&logo=testinglibrary
 [ReactTesting-url]: https://testing-library.com/
 [build.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/build.yml/badge.svg
 [build.yml-url]:./.github/workflows/build.yml
 [static.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/static.yml/badge.svg
 [static.yml-url]:./.github/workflows/static.yml
+[cypress.yml]:https://github.com/annel18/air-quality-monitoring/actions/workflows/cypress.yml/badge.svg
+[cypress.yml-url]:./.github/workflows/cypress.yml
 [Insomnia]:https://img.shields.io/badge/insomnia-400dbf?style=for-the-badge&logo=insomnia
 [Insomnia-url]:https://insomnia.rest/

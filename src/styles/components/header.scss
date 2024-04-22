@@ -7,6 +7,18 @@
 .navbar-menu {
   @include flex(row, center, flex-start);
 
+  #demo-simple-select-autowidth-label {
+    font-family: 'Futura';
+    color: white;
+  }
+
+  #demo-simple-select-autowidth {
+    font-family: 'Futura';
+    font-size: x-large;
+    font-weight: 800;
+    color: white;
+  }
+
   .navbar-button {
       // padding-right: 5em;
       color: white;
@@ -15,6 +27,17 @@
       border: none;
       background-color: transparent;
       text-decoration: none;
+
+      Select {
+        MenuItem {
+          color: black;
+          font-weight: 800;
+          font-size: x-large;
+          border: none;
+          background-color: transparent;
+          text-decoration: none;
+        }
+      }
 
       @media (max-width: 576px) {
           padding: 10px;
@@ -30,12 +53,8 @@
 }
 
 .navbar-drop {
-  // @include flex(row, center, flex-end);
-  // padding-right: 5em;
-      color: black;
-      font-weight: 800;
-      font-size: xx-large;
-      border: none;
-      background-color: transparent;
-      text-decoration: none;
+  color: black;
+  font-weight: 800 !important;
+  font-size: x-large !important;
+  font-family: 'Futura' !important;
 }

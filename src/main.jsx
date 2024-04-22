@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 //! Components
-import App from './App.jsx'
-import PageRealTime from './components/PageRealTime.jsx'
-import PageForecast from './components/PageForecast.jsx'
+import App from './components/App/index.js'
+import PageRealTime from './components/PageRealTime/index.js'
+import PageForecast from './components/PageForecast/index.js'
 
 //! Loaders
 import { getCityFeed } from './utils/loaders/getCityFeed.js'
