@@ -1,12 +1,25 @@
-import { render, screen } from "@testing-library/react";
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import { BrowserRouter } from 'react-router-dom'
+import PageRealTime from './PageRealTime'
 
-import PageRealTime from "./PageRealTime";
+// Mocking the useLoaderData hook
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useLoaderData: jest.fn(() => ({ status: 'mockedStatus' })),
+}))
 
-xdescribe("PageRealTime", () => {
+describe('PageRealTime', () => {
+  it('renders PageRealTime component with correct data status', () => {
+    // Act
+    render(
+      <BrowserRouter>
+        <PageRealTime />
+      </BrowserRouter>
+    )
 
-    it("renders PageRealTime component", async () => {
-        render(<PageRealTime />);
-        const linkElement = await screen.findByText(/Real Time DATA/i);
-        expect(linkElement).toBeInTheDocument();
-    });
-});
+    // Assert
+    expect(screen.getByText('Real Time DATA')).toBeInTheDocument()
+    expect(screen.getByText('DATA status = mockedStatus')).toBeInTheDocument()
+  })
+})
