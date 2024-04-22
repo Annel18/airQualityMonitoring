@@ -2,7 +2,7 @@
 
 import { Outlet } from 'react-router-dom'
 
-import Navbar from '../Navbar/index'
+import Navbar from './components/Navbar/Navbar'
 
 
 export default function App() {
