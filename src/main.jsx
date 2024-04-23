@@ -32,7 +32,10 @@ const router = createBrowserRouter([
           }
       ]
   }
-]
+],
+{
+  basename: '/air-quality-monitoring/'
+}
 )
 
 console.log(process.env.API_URL_LOCAL)

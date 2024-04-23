@@ -4,14 +4,12 @@
 }
 
 html {
-    // font-size: 16px;
+    font-size: 15px;
     min-width: min-content;
 }
 
 body {
     margin: 0;
-    // to allow for footer
-    // margin-bottom: 60px;
 }
 
 main {
@@ -25,3 +23,4 @@ main {
     padding-top: 5em;
     @include flex(row, center, center);
 }
+

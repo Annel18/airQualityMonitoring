@@ -4,6 +4,8 @@
   padding: 1rem 5rem;
 }
 
+
+
 .navbar-menu {
   @include flex(row, center, flex-start);
 
@@ -20,34 +22,36 @@
   }
 
   .navbar-button {
-      // padding-right: 5em;
-      color: white;
-      font-weight: 800;
-      font-size: xx-large;
-      border: none;
-      background-color: transparent;
-      text-decoration: none;
+    color: white;
+    font-weight: 800;
+    font-size: x-large;
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
 
-      Select {
-        MenuItem {
-          color: black;
-          font-weight: 800;
-          font-size: x-large;
-          border: none;
-          background-color: transparent;
-          text-decoration: none;
-        }
-      }
+    Select {
+      MenuItem {
 
-      @media (max-width: 576px) {
-          padding: 10px;
-          font-size: 16x;
+        color: black;
+        font-weight: 800;
+        font-size: x-large;
+        border: none;
+        background-color: transparent;
+        text-decoration: none;
       }
+    }
+
+    @media (max-width: 576px) {
+      padding: 10px;
+      font-size: 16x;
+    }
   }
-  svg{
-    color:white;
+
+  svg {
+    color: white;
   }
-  fieldset{
+
+  fieldset {
     border-color: white;
   }
 }

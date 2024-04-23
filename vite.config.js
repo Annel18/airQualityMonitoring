@@ -12,8 +12,8 @@ export default defineConfig({
     host: true,
     port: 3000,
   },
-  // base: './',
   define: {
     'process.env': process.env
-  }
+  },
+  base: '/air-quality-monitoring/'
 })
