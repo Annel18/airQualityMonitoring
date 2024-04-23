@@ -23,7 +23,8 @@ const router = createBrowserRouter([
           {
               path: '/',
               element: <PageRealTime />,
-              loader: async ({ params }) => getCityFeed(process.env.API_URL_LOCAL),
+              loader: getCityFeed
+              // loader: async ({ params }) => getCityFeed(process.env.API_URL_LOCAL),
           },
           {
               path: '/forecast',
@@ -37,8 +38,6 @@ const router = createBrowserRouter([
   basename: '/air-quality-monitoring/'
 }
 )
-
-console.log(process.env.API_URL_LOCAL)
 
 createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />

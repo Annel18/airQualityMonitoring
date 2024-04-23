@@ -9,23 +9,20 @@ describe('getCityFeed function', () => {
   })
 
   it('should call axios.get with the correct URL', async () => {
-    const url = 'mockURL'
     const mockData = { mockData: 'mockValue' }
     axios.get.mockResolvedValueOnce({ data: mockData })
-    await getCityFeed(url)
-    expect(axios.get).toHaveBeenCalledWith(url)
+    await getCityFeed()
+    expect(axios.get).toHaveBeenCalledWith(process.env.API_URL_LOCAL + process.env.API_KEY)
   })
 
   it('should return data from the response', async () => {
-    const url = 'mockURL'
     const mockData = { mockData: 'mockValue' }
     axios.get.mockResolvedValueOnce({ data: mockData })
-    const result = await getCityFeed(url)
+    const result = await getCityFeed()
     expect(result).toEqual(mockData)
   })
 
   it('should return correct status and attributions', async () => {
-    const url = 'mockURL'
     const responseData = {
       status: 'ok',
       data: {
@@ -38,7 +35,7 @@ describe('getCityFeed function', () => {
       },
     }
     axios.get.mockResolvedValueOnce({ data: responseData })
-    const result = await getCityFeed(url)
+    const result = await getCityFeed()
 
     expect(result.status).toEqual('ok')
     expect(result.data.attributions).toContainEqual({
@@ -48,9 +45,8 @@ describe('getCityFeed function', () => {
   })
 
   it('should throw an error if axios.get fails', async () => {
-    const url = 'mockURL'
     const errorMessage = 'Network Error'
     axios.get.mockRejectedValueOnce(new Error(errorMessage))
-    await expect(getCityFeed(url)).rejects.toThrow(errorMessage)
+    await expect(getCityFeed()).rejects.toThrow(errorMessage)
   })
 })
