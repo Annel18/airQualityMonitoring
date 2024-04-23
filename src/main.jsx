@@ -35,6 +35,8 @@ const router = createBrowserRouter([
 ]
 )
 
+console.log(process.env.API_URL_LOCAL)
+
 createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
   
