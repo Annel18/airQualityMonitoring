@@ -2,6 +2,15 @@ import axios from 'axios'
 import { getCityFeed } from './getCityFeed'
 
 jest.mock('axios')
+const originalEnv = process.env
+
+beforeAll(() => {
+  process.env.API_KEY = 'mockApiKey'
+  process.env.API_URL_LOCAL = 'mockUrl'
+})
+afterAll(() => {
+  process.env = originalEnv
+})
 
 describe('getCityFeed function', () => {
   afterEach(() => {
@@ -12,7 +21,7 @@ describe('getCityFeed function', () => {
     const mockData = { mockData: 'mockValue' }
     axios.get.mockResolvedValueOnce({ data: mockData })
     await getCityFeed()
-    expect(axios.get).toHaveBeenCalledWith(process.env.API_URL_LOCAL + process.env.API_KEY)
+    expect(axios.get).toHaveBeenCalledWith('mockUrlmockApiKey')
   })
 
   it('should return data from the response', async () => {
