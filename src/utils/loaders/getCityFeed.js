@@ -1,4 +1,6 @@
-export async function getCityFeed(token) {
-  const response = await fetch(`https://api.waqi.info/feed/here/?token=${token}`);
-  return response.json();
+import axios from 'axios'
+
+export async function getCityFeed(url) {
+  const response = await axios.get(`${url}`)
+  return response.data
 }
