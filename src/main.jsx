@@ -1,5 +1,6 @@
-// import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from 'react'
+// import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 //! Components
@@ -8,11 +9,14 @@ import PageRealTime from './components/PageRealTime/index.js'
 import PageForecast from './components/PageForecast/index.js'
 
 //! Loaders
-// import { getCityFeed } from './utils/loaders/getCityFeed.js'
+import { getCityFeed } from './utils/loaders/getCityFeed.js'
 
 //! Styles
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/main.scss'
+
+//! Access environment variable
+const token = import.meta.env.VITE_TOKEN
 
 //! Router
 const router = createBrowserRouter([
@@ -23,7 +27,7 @@ const router = createBrowserRouter([
           {
               path: '/',
               element: <PageRealTime />,
-              // loader: getCityFeed,
+              loader: async ({ params }) => getCityFeed(token),
           },
           {
               path: '/forecast',
@@ -35,6 +39,6 @@ const router = createBrowserRouter([
 ]
 )
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
 )
