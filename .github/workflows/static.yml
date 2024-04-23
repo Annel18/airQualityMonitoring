@@ -30,6 +30,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Decrypt secret
+        run: ./decrypt_secret.sh
+        env: 
+          API_KEY: ${{ secrets.API_KEY }}
+          API_URL_LOCAL: ${{ secrets.API_URL_LOCAL }}
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
