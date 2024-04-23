@@ -3,6 +3,7 @@
 import { Outlet } from 'react-router-dom'
 
 import Navbar from '../Navbar/index'
+import Footer from '../Footer/index'
 
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
       <main>
         <Outlet />
       </main>
-
+      <Footer />
     </>
   )
 }
