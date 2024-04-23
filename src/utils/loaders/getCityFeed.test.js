@@ -53,9 +53,9 @@ describe('getCityFeed function', () => {
     })
   })
 
-  // it('should throw an error if axios.get fails', async () => {
-  //   const errorMessage = 'Network Error'
-  //   axios.get.mockRejectedValueOnce(new Error(errorMessage))
-  //   await expect(getCityFeed()).rejects.toThrow(errorMessage)
-  // })
+  it('should throw an error if axios.get fails', async () => {
+    const errorMessage = 'Network Error'
+    axios.get.mockRejectedValueOnce(new Error(errorMessage))
+    await expect(getCityFeed()).rejects.toThrow(errorMessage)
+  })
 })
