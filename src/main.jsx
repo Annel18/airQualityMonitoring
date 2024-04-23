@@ -1,5 +1,5 @@
 // import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot} from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 //! Components
@@ -32,9 +32,12 @@ const router = createBrowserRouter([
           }
       ]
   }
-]
+],
+{
+  basename: '/air-quality-monitoring/'
+}
 )
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render(
   <RouterProvider router={router} />
 )
