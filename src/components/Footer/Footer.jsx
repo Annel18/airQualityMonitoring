@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 import airQualityLevels from '../../assets/data/airQualityLevels.js'
 import aqiColorKey from '../../assets/data/aqiColorKey.js'
 
@@ -19,11 +21,11 @@ export default function Footer() {
       </div>
       <nav className="footer-nav">
       <p>|</p>
-        <a href="">About </a>
+        <Link to="/About/">About </Link>
         <p>|</p>
-        <a href="">Resources</a>
+        <Link to="/Resources/">Resources</Link>
         <p>|</p>
-        <a href="">Source Code</a>
+        <a href="https://github.com/Annel18/air-quality-monitoring" target="_blank">Source Code</a>
         <p>|</p>
       </nav>
     </footer>
