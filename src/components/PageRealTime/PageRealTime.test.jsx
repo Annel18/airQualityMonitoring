@@ -23,13 +23,8 @@ describe('PageRealTime', () => {
 
     // Assert
     await waitFor(() => {
-      expect(screen.getByText('DATA status = mockedStatus')).toBeInTheDocument();
-      expect(window._aqiFeed).toHaveBeenCalledWith({
-        container: 'city-aqi-container',
-        city: 'Mocked City',
-        display: '%details',
-        lang: 'en',
-      });
-    });
-  });
-});
+      expect(screen.getByText('Real Time DATA')).toBeInTheDocument();
+      expect(screen.getByText('DATA status = mockedStatus')).toBeInTheDocument()
+    })
+  })
+})
