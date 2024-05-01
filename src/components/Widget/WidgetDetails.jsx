@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useLoaderData } from "react-router-dom"
 
-import loadExternalScript from '../../utils/loaders/loadExternalScript.js'
+import {loadExternalScript} from '../../utils/loaders/loadExternalScript'
 
 export default function WidgetDetails() {
   const data = useLoaderData()
@@ -14,15 +14,20 @@ export default function WidgetDetails() {
       container: "city-aqi-container-detailed", 
       city: data.data.city.name,
       lang:"en",
-      display:"%details",  
-      // callback:function(aqi){console.log(aqi)}
+      callback: function(aqi) {
+        const longHtmlSnippet = aqi.details
+          .replaceAll(`overflow:hidden;`,``)
+          .replaceAll(`<div style='width:28px;'`,`<div style='width:60px;text-align:right;padding-right:5px'`)
+          .replaceAll(`width:180px`,`width:210px`);
+        document.getElementById('city-aqi-container-detailed').innerHTML = longHtmlSnippet;
+      }
     })
   }, [data.data.city])
   
 
   return (
     <>
-      <span id="city-aqi-container-detailed"></span>
+      <span id="city-aqi-container-detailed" data-testid="city-aqi-container-detailed"></span>
     </>
   );
 }

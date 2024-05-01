@@ -10,7 +10,9 @@ jest.mock('react-router-dom', () => ({
 }));
 
 // Mocking _aqiFeed function
-window._aqiFeed = jest.fn();
+window._aqiFeed = jest.fn((options) => {
+  options.callback({ details: 'Mocked HTML snippet' }); // Simulate callback invocation with mocked data
+});
 
 describe('PageRealTime', () => {
   it('renders PageRealTime component with correct data status', async () => {

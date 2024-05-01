@@ -1,4 +1,6 @@
-export default function loadExternalScript(w, d, t, f) {
+// function given by the API documentation
+// https://aqicn.org/faq/2015-07-28/air-quality-widget-new-improved-feed/
+export function loadExternalScript(w, d, t, f) {
   w[f] = w[f] || function (c, k, n) {
     const s = w[f];
     k = s['k'] = (s['k'] || (k ? ('&k=' + k) : ''));
