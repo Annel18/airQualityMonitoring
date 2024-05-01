@@ -1,11 +1,8 @@
-import { useEffect } from "react";
-import { useLoaderData } from "react-router-dom";
-
-import WidgetDetails from "../Widget/WidgetDetails";
+import { useLoaderData } from "react-router-dom"
+import WidgetDetails from "../Widget/WidgetDetails"
 
 export default function PageRealTime() {
-  const data = useLoaderData();
-
+  const data = useLoaderData()
   return (
     <>
       <h1>Real Time DATA</h1>
