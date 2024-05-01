@@ -21,7 +21,7 @@ describe('PageRealTime', () => {
       <BrowserRouter>
         <PageRealTime />
       </BrowserRouter>
-    );
+    )
 
     // Assert
     await waitFor(() => {
