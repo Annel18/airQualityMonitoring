@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import {loadExternalScript} from '../../utils/loaders/loadExternalScript'
+import { loadExternalScript } from '../../utils/loaders/loadExternalScript'
 import { getCityFeed } from '../../utils/loaders/getCityFeed'
 
 export default function WidgetDetails({ location }) {
@@ -24,7 +24,7 @@ export default function WidgetDetails({ location }) {
       loadExternalScript(window, document, 'script', '_aqiFeed')
       _aqiFeed({
         container: "city-aqi-container-detailed",
-        city: data.data.city.name,
+        city: data.data.city.name.toLowerCase().replace(' ', '').replace('-', ''),
         lang: "en",
         callback: function(aqi) {
           console.log('Widget callback data:', aqi)
@@ -38,9 +38,9 @@ export default function WidgetDetails({ location }) {
     }
   }, [data])
 
-  useEffect(() => {
-    console.log('Location prop changed:', location)
-  }, [location])
+  // useEffect(() => {
+  //   console.log('Location prop changed:', location)
+  // }, [location])
 
   return (
     <>

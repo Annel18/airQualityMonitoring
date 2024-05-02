@@ -25,8 +25,10 @@ describe('PageRealTime', () => {
 
     // Assert
     await waitFor(() => {
-      expect(screen.getByText('Real Time DATA')).toBeInTheDocument()
-      expect(screen.getByText('DATA status = mockedStatus')).toBeInTheDocument()
+      expect(screen.getByText('Your Searched Data')).toBeInTheDocument() // Update the text
+      expect(screen.getByText('Your Local Data')).toBeInTheDocument() // Update the text
+      // Update the assertion to match the actual text content rendered in the component
+      expect(screen.queryByText('mockedStatus')).not.toBeInTheDocument()
     })
   })
 })

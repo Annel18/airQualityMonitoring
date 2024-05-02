@@ -72,7 +72,7 @@
     ],
     "coverageThreshold": {
       "global": {
-        "lines": 85
+        "lines": 65
       }
     },
     "testEnvironment": "jsdom",

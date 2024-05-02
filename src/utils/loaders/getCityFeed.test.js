@@ -20,14 +20,14 @@ describe('getCityFeed function', () => {
   it('should call axios.get with the correct URL', async () => {
     const mockData = { mockData: 'mockValue' }
     axios.get.mockResolvedValueOnce({ data: mockData })
-    await getCityFeed()
-    expect(axios.get).toHaveBeenCalledWith('mockUrlmockApiKey')
+    await getCityFeed('location') // Pass a location argument to the function
+    expect(axios.get).toHaveBeenCalledWith('https://api.waqi.info/feed/location/?token=mockApiKey')
   })
 
   it('should return data from the response', async () => {
     const mockData = { mockData: 'mockValue' }
     axios.get.mockResolvedValueOnce({ data: mockData })
-    const result = await getCityFeed()
+    const result = await getCityFeed('location') // Pass a location argument to the function
     expect(result).toEqual(mockData)
   })
 
@@ -44,7 +44,7 @@ describe('getCityFeed function', () => {
       },
     }
     axios.get.mockResolvedValueOnce({ data: responseData })
-    const result = await getCityFeed()
+    const result = await getCityFeed('location') // Pass a location argument to the function
 
     expect(result.status).toEqual('ok')
     expect(result.data.attributions).toContainEqual({
@@ -56,6 +56,6 @@ describe('getCityFeed function', () => {
   it('should throw an error if axios.get fails', async () => {
     const errorMessage = 'Network Error'
     axios.get.mockRejectedValueOnce(new Error(errorMessage))
-    await expect(getCityFeed()).rejects.toThrow(errorMessage)
+    await expect(getCityFeed('location')).rejects.toThrow(errorMessage) // Pass a location argument to the function
   })
 })
