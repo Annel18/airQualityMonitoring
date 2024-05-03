@@ -33,9 +33,9 @@ export default function WidgetDetails({ location }) {
         lang: "en",
         callback: function(aqi) {
           const longHtmlSnippet = aqi.details
-            .replaceAll(`overflow:hidden`, ``)
-            .replaceAll(`<div style='width:28px'`, `<div style='width:60pxtext-align:rightpadding-right:5px'`)
-            .replaceAll(`width:180px`, `width:210px`)
+            .replaceAll(`overflow:hidden;`,``)
+            .replaceAll(`<div style='width:28px;'`,`<div style='width:60px;text-align:right;padding-right:5px'`)
+            .replaceAll(`width:180px`,`width:210px`)
           document.getElementById('city-aqi-container-detailed').innerHTML = longHtmlSnippet
         }
       })
