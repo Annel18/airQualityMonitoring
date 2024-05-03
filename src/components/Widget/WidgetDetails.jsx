@@ -29,5 +29,5 @@ export default function WidgetDetails() {
     <>
       <span id="city-aqi-container-detailed" data-testid="city-aqi-container-detailed"></span>
     </>
-  );
+  )
 }
