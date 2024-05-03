@@ -1,6 +1,5 @@
-import { useEffect } from "react"
+import React, { useEffect } from "react"
 import { useLoaderData } from "react-router-dom"
-
 import {loadExternalScript} from '../../utils/loaders/loadExternalScript'
 
 export default function WidgetDetails() {
@@ -22,7 +21,7 @@ export default function WidgetDetails() {
         document.getElementById('city-aqi-container-detailed').innerHTML = longHtmlSnippet
       }
     })
-  }, [data.data.city])
+  }, [data])
   
 
   return (
