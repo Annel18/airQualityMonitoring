@@ -1,4 +1,3 @@
-/* istanbul ignore file */
 // function given by the API documentation
 // https://aqicn.org/faq/2015-07-28/air-quality-widget-new-improved-feed/
 export function loadExternalScript(w, d, t, f) {
