@@ -9,8 +9,12 @@ export function loadExternalScript(w, d, t, f) {
     s['n'] = n = n || 0;
     const L = d.createElement(t);
     const e = d.getElementsByTagName(t)[0];
-    L.async = 1;
-    L.src = '//feed.aqicn.org/feed/' + (c[n].city) + '/' + (c[n].lang || '') + '/feed.v1.js?n=' + n + k;
-    e.parentNode.insertBefore(L, e);
+    if (e) {
+      L.async = 1;
+      L.src = '//feed.aqicn.org/feed/' + (c[n].city) + '/' + (c[n].lang || '') + '/feed.v1.js?n=' + n + k;
+      e.parentNode.insertBefore(L, e);
+    } else {
+      console.error('Cannot find element to insert script');
+    }
   };
 }

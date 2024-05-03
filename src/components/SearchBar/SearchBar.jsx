@@ -12,7 +12,7 @@ export default function SearchBar({ onLocationChange }) {
 
   return (
     <div className="filter-bar">
-      <form onSubmit={search}>
+      <form onSubmit={search} data-testid="searchForm">
         <input
           type="text"
           name="searchField"
