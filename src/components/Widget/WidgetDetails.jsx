@@ -3,7 +3,7 @@ import { loadExternalScript } from '../../utils/loaders/loadExternalScript'
 import { getCityFeed } from '../../utils/loaders/getCityFeed'
 
 function cleanCityName(name) {
-  return name.toLowerCase().replace(/\s/g, '').replace('-', '');
+  return name.toLowerCase().replace(/\s/g, '').replace('-', '')
 }
 
 export default function WidgetDetails({ location }) {
@@ -24,7 +24,7 @@ export default function WidgetDetails({ location }) {
 
   useEffect(() => {
     if (data) {
-      const cityName = cleanCityName(data.data.city.name);
+      const cityName = cleanCityName(data.data.city.name)
       setCityDisplay(data.data.city.name)
       loadExternalScript(window, document, 'script', '_aqiFeed')
       _aqiFeed({

@@ -1,37 +1,37 @@
 import { loadExternalScript } from './loadExternalScript'
 beforeAll(() => {
-  process.env.API_KEY = 'mockApiKey';
-});
+  process.env.API_KEY = 'mockApiKey'
+})
 
 describe('loadExternalScript', () => {
-  let mockWindow;
-  let mockDocument;
+  let mockWindow
+  let mockDocument
 
   beforeEach(() => {
     // Create a parent node and attach it to the document
-    const parentNode = document.createElement('div');
-    document.body.appendChild(parentNode);
+    const parentNode = document.createElement('div')
+    document.body.appendChild(parentNode)
 
     // Mock the window object
-    mockWindow = {};
+    mockWindow = {}
 
     // Mock the document object
     mockDocument = {
       createElement: jest.fn(() => ({ src: '' })),
       getElementsByTagName: jest.fn(() => [{ src: '' }]),
       parentNode, // Assign the created parent node
-    };
-  });
+    }
+  })
 
   // Test case for setting up widget function on window object
   it('sets up widget function on window object if not already present', () => {
     // Define _aqiFeed property on mockWindow
-    mockWindow['_aqiFeed'] = jest.fn();
+    mockWindow['_aqiFeed'] = jest.fn()
 
     // Call the loadExternalScript function with mock arguments
-    loadExternalScript(mockWindow, mockDocument, 'script', '_aqiFeed');
+    loadExternalScript(mockWindow, mockDocument, 'script', '_aqiFeed')
 
     // Assertions to check if the widget function is set up on the window object
-    expect({}.hasOwnProperty.call(mockWindow, '_aqiFeed')).toBeTruthy();
-  });
-});
+    expect({}.hasOwnProperty.call(mockWindow, '_aqiFeed')).toBeTruthy()
+  })
+})

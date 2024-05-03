@@ -8,7 +8,7 @@ export default function PageRealTime() {
   const data = useLoaderData()
   // Function to handle location change
   const handleLocationChange = (newLocation) => {
-    setLocation(newLocation);
+    setLocation(newLocation)
   }
   return (
     <>
