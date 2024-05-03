@@ -1,6 +1,6 @@
-import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
-import WidgetDetails from './WidgetDetails';
+import React from 'react'
+import { render, screen, waitFor } from '@testing-library/react'
+import WidgetDetails from './WidgetDetails'
 
 jest.mock('react-router-dom', () => ({
   useLoaderData: jest.fn(() => ({
@@ -10,20 +10,20 @@ jest.mock('react-router-dom', () => ({
       },
     },
   })),
-}));
+}))
 
 describe('WidgetDetails', () => {
   beforeAll(() => {
     // Mock the _aqiFeed function
-    window._aqiFeed = jest.fn();
-  });
+    window._aqiFeed = jest.fn()
+  })
 
   it('renders widget container', async () => {
-    render(<WidgetDetails />);
+    render(<WidgetDetails />)
     
     // Check if the container element is present
-    const container = screen.getByTestId('city-aqi-container-detailed');
-    expect(container).toBeInTheDocument();
+    const container = screen.getByTestId('city-aqi-container-detailed')
+    expect(container).toBeInTheDocument()
     
     // Check if loadExternalScript is called with the correct arguments
     await waitFor(() => {
@@ -32,7 +32,7 @@ describe('WidgetDetails', () => {
         lang: 'en',
         container: 'city-aqi-container-detailed',
         callback: expect.any(Function),
-      }));
-    });
-  });
-});
+      }))
+    })
+  })
+})

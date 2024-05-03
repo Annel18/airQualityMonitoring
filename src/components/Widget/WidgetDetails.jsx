@@ -18,8 +18,8 @@ export default function WidgetDetails() {
         const longHtmlSnippet = aqi.details
           .replaceAll(`overflow:hidden;`,``)
           .replaceAll(`<div style='width:28px;'`,`<div style='width:60px;text-align:right;padding-right:5px'`)
-          .replaceAll(`width:180px`,`width:210px`);
-        document.getElementById('city-aqi-container-detailed').innerHTML = longHtmlSnippet;
+          .replaceAll(`width:180px`,`width:210px`)
+        document.getElementById('city-aqi-container-detailed').innerHTML = longHtmlSnippet
       }
     })
   }, [data.data.city])
