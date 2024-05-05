@@ -1,16 +1,15 @@
-import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 //! Components
 import App from './components/App/index.js'
-import PageRealTime from './components/PageRealTime/index.js'
-import PageForecast from './components/PageForecast/index.js'
-import PageAbout from './components/PageAbout/index.js'
-import PageResources from './components/PageResources/index.js'
+import PageRealTime from './components/PageRealTime/index.ts'
+import PageForecast from './components/PageForecast/index.ts'
+import PageAbout from './components/PageAbout/index.ts'
+import PageResources from './components/PageResources/index.ts'
 
 //! Loaders
-import { getCityFeed } from './utils/loaders/getCityFeed.js'
+import { getCityFeed } from './utils/loaders/getCityFeed.ts'
 
 //! Styles
 import 'bootstrap/dist/css/bootstrap.min.css'

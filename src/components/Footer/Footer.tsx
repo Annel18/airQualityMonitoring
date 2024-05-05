@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
-import airQualityLevels from '../../assets/data/airQualityLevels.js'
-import aqiColorKey from '../../assets/data/aqiColorKey.js'
+import airQualityLevels from '../../assets/data/airQualityLevels.ts'
+import aqiColorKey from '../../assets/data/aqiColorKey.ts'
 
 export default function Footer() {
 
