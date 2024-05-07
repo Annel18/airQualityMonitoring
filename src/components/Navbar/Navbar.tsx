@@ -1,19 +1,14 @@
-import InputLabel from '@mui/material/InputLabel'
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
-import Select from '@mui/material/Select'
-
-import { Link } from "react-router-dom"
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
-  //! States
-  const [redirection, setRedirection] = useState('real-time')
+  const navigate = useNavigate()
+  const [redirection, setRedirection] = useState<string>('real-time')
 
-  //! Functions
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setRedirection(event.target.value)
-  }
+    navigate(event.target.value)
+  };
 
   return (
     <header>
@@ -22,32 +17,20 @@ export default function Navbar() {
           <div className="navbar-button">Air Quality App</div>
         </div>
         <div className='navbar-menu'>
-          <FormControl sx={{ m: 1, minWidth: 250 }}>
-            <InputLabel id="demo-simple-select-autowidth-label">Feed Type</InputLabel>
-            <Select
-              labelId="demo-simple-select-autowidth-label"
-              id="demo-simple-select-autowidth"
+          <div className="form-control">
+            <select
+              id="feed-type"
               value={redirection}
               onChange={handleChange}
-              autoWidth
-              label="Feed Type"
-              >
-              <MenuItem
-                as={Link}
-                to="/"
-                className='navbar-drop'
-                value={'real-time'}
-                >Real-Time</MenuItem>
-              <MenuItem
-                as={Link}
-                to="/forecast/"
-                className='navbar-drop'
-                value={'forecast'}
-                >Forecast</MenuItem>
-            </Select>
-          </FormControl>
+              className="select"
+            >
+              <option value="/">Real-Time</option>
+              <option value="/forecast">Forecast</option>
+            </select>
+            <label htmlFor="feed-type" className="input-label">Feed Type</label>
+          </div>
         </div>
-      </nav >
-    </header >
+      </nav>
+    </header>
   )
 }

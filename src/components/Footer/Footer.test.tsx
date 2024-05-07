@@ -1,15 +1,17 @@
-import React from "react"
 import { render, screen } from "@testing-library/react"
 import Footer from "./Footer"
 import aqiColorKey from '../../assets/data/aqiColorKey'
 
+import '@testing-library/jest-dom/extend-expect'
+
 describe("Footer", () => {
   it("renders Footer component with correct AQI color key", () => {
     render(<Footer />)
-    aqiColorKey.forEach((level, i) => {
+    aqiColorKey.forEach((level) => {
       const aqiElement = screen.getByText(level.aqi)
       expect(aqiElement).toBeInTheDocument()
-      expect(aqiElement).toHaveStyle({ backgroundColor: level.backgroundColor, color: level.textColor })
+      const expectedStyle = `background-color: ${level.backgroundColor}; color: ${level.textColor};`
+      expect(aqiElement).toHaveStyle(expectedStyle)
     })
   })
 
