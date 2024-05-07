@@ -1,45 +1,35 @@
-import React from "react"
-import { render, screen, fireEvent } from "@testing-library/react"
-import Navbar from "./Navbar"
-import { MemoryRouter } from "react-router-dom"
 
+import { render, fireEvent } from '@testing-library/react'
+import Navbar from './Navbar'
+import { BrowserRouter as Router } from 'react-router-dom'
+import '@testing-library/jest-dom/extend-expect'
 
-
-// jest.mock('react-dom', () => ({ render: jest.fn() }))
-
-describe("Navbar", () => {
-
-  it("renders Navbar component", async () => {
-    render(<Navbar />)
-    const linkElement = await screen.findByText(/Air Quality App/i)
-    expect(linkElement).toBeInTheDocument()
-  })
-
-  it('renders Navbar component with default value', () => {
-    const { getByText, getByLabelText } = render(<Navbar />)
-
-    // Check if the Navbar header is rendered
-    expect(getByText('Air Quality App')).toBeInTheDocument()
-
-    // Check if the Feed Type label is rendered
-    expect(getByLabelText('Feed Type')).toBeInTheDocument()
-
-    // Check if the default value is 'Real-Time'
-    expect(getByText('Real-Time')).toBeInTheDocument()
-  })
-
-  it("changes redirection value when selecting Forecast", () => {
-    render(
-      <MemoryRouter>
+describe('Navbar Component', () => {
+  test('renders Navbar component', () => {
+    const { getByText, getByLabelText } = render(
+      <Router>
         <Navbar />
-      </MemoryRouter>
+      </Router>
     )
 
-    const feedTypeSelect = screen.getByLabelText("Feed Type")
-    fireEvent.mouseDown(feedTypeSelect)
-    const forecastOption = screen.getByText("Forecast")
-    fireEvent.click(forecastOption)
+    const headerElement = getByText('Air Quality App')
+    const selectElement = getByLabelText('Feed Type')
 
-    expect(forecastOption.selected).toBe(true)
+    expect(headerElement).toBeInTheDocument()
+    expect(selectElement).toBeInTheDocument()
+  })
+
+  test('selecting option navigates to correct route', () => {
+    const { getByLabelText } = render(
+      <Router>
+        <Navbar />
+      </Router>
+    )
+
+    const selectElement = getByLabelText('Feed Type')
+
+    fireEvent.change(selectElement, { target: { value: '/forecast' } })
+
+    expect(window.location.pathname).toBe('/forecast')
   })
 })

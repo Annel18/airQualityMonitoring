@@ -4,21 +4,37 @@
   padding: 1rem 5rem;
 }
 
-
-
 .navbar-menu {
   @include flex(row, center, flex-start);
 
-  #demo-simple-select-autowidth-label {
-    font-family: 'Futura';
+  .form-control {
     color: white;
-  }
+    background-color: transparent;
+    margin: 0 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 
-  #demo-simple-select-autowidth {
-    font-family: 'Futura';
-    font-size: x-large;
-    font-weight: 800;
-    color: white;
+    .input-label {
+      font-family: 'Futura';
+      color: white;
+      margin-bottom: 0.5rem;
+      position: absolute;
+      top: -0.75rem;
+      left: 0.5rem; 
+      background-color: $navBar-color;
+      padding: 0 0.25rem;
+    }
+
+    .select {
+      font-family: 'Futura';
+      font-size: x-large;
+      font-weight: 800;
+      color: white;
+      background-color: transparent;
+      border: none;
+      padding-top: 1rem;
+    }
   }
 
   .navbar-button {
@@ -28,18 +44,6 @@
     border: none;
     background-color: transparent;
     text-decoration: none;
-
-    Select {
-      MenuItem {
-
-        color: black;
-        font-weight: 800;
-        font-size: x-large;
-        border: none;
-        background-color: transparent;
-        text-decoration: none;
-      }
-    }
 
     @media (max-width: 576px) {
       padding: 10px;
@@ -54,11 +58,4 @@
   fieldset {
     border-color: white;
   }
-}
-
-.navbar-drop {
-  color: black;
-  font-weight: 800 !important;
-  font-size: x-large !important;
-  font-family: 'Futura' !important;
 }
