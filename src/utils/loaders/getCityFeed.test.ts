@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { getCityFeed } from './getCityFeed'
 
 jest.mock('axios')
@@ -8,6 +8,7 @@ beforeAll(() => {
   process.env.API_KEY = 'mockApiKey'
   process.env.API_URL_LOCAL = 'mockUrl'
 })
+
 afterAll(() => {
   process.env = originalEnv
 })
@@ -18,18 +19,18 @@ describe('getCityFeed function', () => {
   })
 
   it('should call axios.get with the correct URL', async () => {
-    const mockData = { mockData: 'mockValue' }
-    axios.get.mockResolvedValueOnce({ data: mockData })
+    const mockData = { mockData: 'mockValue' };
+    (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({ data: mockData } as AxiosResponse<any>)
     await getCityFeed()
     expect(axios.get).toHaveBeenCalledWith('mockUrlmockApiKey')
   })
 
   it('should return data from the response', async () => {
-    const mockData = { mockData: 'mockValue' }
-    axios.get.mockResolvedValueOnce({ data: mockData })
+    const mockData = { mockData: 'mockValue' };
+    (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({ data: mockData } as AxiosResponse<any>)
     const result = await getCityFeed()
     expect(result).toEqual(mockData)
-  })
+  });
 
   it('should return correct status and attributions', async () => {
     const responseData = {
@@ -42,8 +43,8 @@ describe('getCityFeed function', () => {
           },
         ],
       },
-    }
-    axios.get.mockResolvedValueOnce({ data: responseData })
+    };
+    (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({ data: responseData } as AxiosResponse<any>)
     const result = await getCityFeed()
 
     expect(result.status).toEqual('ok')
@@ -54,8 +55,8 @@ describe('getCityFeed function', () => {
   })
 
   it('should throw an error if axios.get fails', async () => {
-    const errorMessage = 'Network Error'
-    axios.get.mockRejectedValueOnce(new Error(errorMessage))
+    const errorMessage = 'Network Error';
+    (axios.get as jest.MockedFunction<typeof axios.get>).mockRejectedValueOnce(new Error(errorMessage))
     await expect(getCityFeed()).rejects.toThrow(errorMessage)
   })
 })
