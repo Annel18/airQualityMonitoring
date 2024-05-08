@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom"
 
 interface LoaderData {
   status: string;
@@ -6,7 +6,7 @@ interface LoaderData {
 }
 
 export default function PageRealTime() {
-  const data = useLoaderData() as LoaderData;
+  const data = useLoaderData() as LoaderData
 
   return (
     <>
