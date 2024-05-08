@@ -1,14 +1,14 @@
-import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
 
 //! Components
-import App from './components/App/index.js'
-import PageRealTime from './components/PageRealTime/index.js'
-import PageForecast from './components/PageForecast/index.js'
+import App from './components/App/index'
+import PageRealTime from './components/PageRealTime/index'
+import PageForecast from './components/PageForecast/index'
 
 //! Loaders
-import { getCityFeed } from './utils/loaders/getCityFeed.js'
+import { getCityFeed } from './utils/loaders/getCityFeed'
 
 //! Styles
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -39,7 +39,8 @@ const router = createBrowserRouter([
 }
 )
 
-createRoot(document.getElementById('root')).render(
+const rootContainer = document.getElementById('root')!
+
+createRoot(rootContainer).render(
   <RouterProvider router={router} />
-  
-)
+);

@@ -1,11 +1,12 @@
 import { loadExternalScript } from './loadExternalScript'
+
 beforeAll(() => {
   process.env.API_KEY = 'mockApiKey'
 })
 
 describe('loadExternalScript', () => {
-  let mockWindow
-  let mockDocument
+  let mockWindow: any
+  let mockDocument: any
 
   beforeEach(() => {
     // Create a parent node and attach it to the document
@@ -33,5 +34,14 @@ describe('loadExternalScript', () => {
 
     // Assertions to check if the widget function is set up on the window object
     expect({}.hasOwnProperty.call(mockWindow, '_aqiFeed')).toBeTruthy()
+  })
+
+  // Test case for setting up widget function on window object if not present
+  it('creates widget function on window object if not already present', () => {
+    // Call the loadExternalScript function with mock arguments
+    loadExternalScript(mockWindow, mockDocument, 'script', '_aqiFeed')
+
+    // Assertions to check if the widget function is set up on the window object
+    expect(mockWindow['_aqiFeed']).toBeDefined()
   })
 })
