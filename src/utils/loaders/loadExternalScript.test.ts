@@ -1,11 +1,12 @@
 import { loadExternalScript } from './loadExternalScript'
+
 beforeAll(() => {
   process.env.API_KEY = 'mockApiKey'
 })
 
 describe('loadExternalScript', () => {
-  let mockWindow
-  let mockDocument
+  let mockWindow: any
+  let mockDocument: any
 
   beforeEach(() => {
     // Create a parent node and attach it to the document

@@ -1,6 +1,6 @@
-import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 import WidgetDetails from './WidgetDetails'
+import '@testing-library/jest-dom/extend-expect'
 
 jest.mock('react-router-dom', () => ({
   useLoaderData: jest.fn(() => ({
