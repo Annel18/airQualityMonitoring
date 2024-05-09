@@ -39,3 +39,14 @@ footer > *{
     border-top: none;
   }
 }
+
+button {
+  border: 2px solid transparent;
+  &:hover{
+    border: 2px solid $primary-color;
+  }
+}
+
+// button:hover{
+//   border: 1px solid $primary-color;
+// }
