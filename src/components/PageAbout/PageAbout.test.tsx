@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import PageAbout from './index'
+import PageAbout from "./index"
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import '@testing-library/jest-dom/extend-expect'
