@@ -17,6 +17,7 @@ const ModalAqi: React.FC<Props> = ({ open, handleClose, level }) => {
         show={open}
         onHide={handleClose}
         aria-labelledby="example-modal-sizes-title-lg"
+        data-testid="popup"
       >
         <Modal.Header closeButton style={{backgroundColor:`${level.backgroundColor}`, color:`${level.textColor}`}}>
           <Modal.Title id="example-modal-sizes-title-lg">
