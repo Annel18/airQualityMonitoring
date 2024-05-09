@@ -1,11 +1,11 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import Footer from "./index"
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Footer component', () => {
-  test('renders footer links', () => {
+  it('renders footer links', () => {
     render(
       <Router>
         <Footer />
@@ -24,7 +24,7 @@ describe('Footer component', () => {
     expect(screen.getByText('Source Code')).toHaveAttribute('target', '_blank')
   })
 
-  test('renders AQI color key', () => {
+  it('renders AQI color key', () => {
     render(
       <Router>
         <Footer />
@@ -33,5 +33,41 @@ describe('Footer component', () => {
 
     const aqiLevels = screen.getAllByTestId('aqi-level')
     expect(aqiLevels).toHaveLength(11)
+  })
+
+  it('opens modal when AQI level button is clicked', () => {
+    render(
+      <Router>
+        <Footer />
+      </Router>
+    )
+
+    // Get the first AQI level button and click it
+    const firstAqiLevelButton = screen.getAllByTestId('aqi-level')[0]
+    fireEvent.click(firstAqiLevelButton)
+
+    // Assert that the modal is opened
+    expect(screen.getByTestId('popup')).toBeInTheDocument()
+  })
+
+  it('closes modal when close button in modal is clicked', async () => {
+    render(
+      <Router>
+        <Footer />
+      </Router>
+    )
+
+    // Get the first AQI level button and click it to open the modal
+    const firstAqiLevelButton = screen.getAllByTestId('aqi-level')[0]
+    fireEvent.click(firstAqiLevelButton)
+
+    // Get the close button in the modal and click it
+    const closeButton = screen.getByLabelText('Close')
+    fireEvent.click(closeButton)
+
+    // Wait for the modal to be removed from the document
+    await waitFor(() => {
+      expect(screen.queryByTestId('popup')).not.toBeInTheDocument()
+    })
   })
 })
