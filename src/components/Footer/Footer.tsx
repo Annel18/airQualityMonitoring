@@ -1,26 +1,45 @@
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 import aqiColorKey from '../../assets/data/aqiColorKey';
+import ModalAqi from '../ModalAqi/index';
 
-interface Level {
+export interface KeyLevel {
   aqi: string;
   backgroundColor: string;
   textColor: string;
-  level: object;
+  level: {
+    aqi: string;
+    airPollutionLevel: string;
+    healthImplications: string;
+    cautionaryStatement: string;
+  };
 }
 
 export default function Footer() {
+  const [open, setOpen] = useState<boolean>(false);
+  const [selectedLevel, setSelectedLevel] = useState<KeyLevel | null>(null);
+
+  const handleOpen = (level: KeyLevel) => {
+    setSelectedLevel(level);
+    setOpen(true);
+  };
+
+  const handleClose = () => setOpen(false);
+
   return (
     <footer>
       <div className="levels-key">
-        {aqiColorKey.map((level: Level, i: number) => (
-          <p
-            key={i}
-            className="levels-aqi"
-            style={{ backgroundColor: level.backgroundColor, color: level.textColor }}
-            data-testid="aqi-level" // Add data-testid here
-          >
-            {level.aqi}
-          </p>
+        {aqiColorKey.map((level: KeyLevel, i: number) => (
+          <div key={i}>
+            <button
+              className="levels-aqi"
+              style={{ backgroundColor: level.backgroundColor, color: level.textColor }}
+              data-testid="aqi-level"
+              onClick={() => handleOpen(level)}
+            >
+              {level.aqi}
+            </button>
+          </div>
         ))}
       </div>
       <nav className="footer-nav">
@@ -34,6 +53,9 @@ export default function Footer() {
         </a>
         <p>|</p>
       </nav>
+      {selectedLevel && (
+        <ModalAqi open={open} handleClose={handleClose} level={selectedLevel} />
+      )}
     </footer>
   );
 }
