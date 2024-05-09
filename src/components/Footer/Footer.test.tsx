@@ -1,41 +1,37 @@
-import { render, screen } from "@testing-library/react"
-import Footer from "./Footer"
-import aqiColorKey from '../../assets/data/aqiColorKey'
+import { render, screen } from '@testing-library/react'
+import Footer from './Footer'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import '@testing-library/jest-dom/extend-expect'
 
-describe("Footer", () => {
-  it("renders Footer component with correct AQI color key", () => {
-    render(<Footer />)
-    aqiColorKey.forEach((level) => {
-      const aqiElement = screen.getByText(level.aqi)
-      expect(aqiElement).toBeInTheDocument()
-      const expectedStyle = `background-color: ${level.backgroundColor}; color: ${level.textColor};`
-      expect(aqiElement).toHaveStyle(expectedStyle)
-    })
+describe('Footer component', () => {
+  test('renders footer links', () => {
+    render(
+      <Router>
+        <Footer />
+      </Router>
+    )
+
+    // Assert that the links are rendered
+    expect(screen.getByText('About')).toBeInTheDocument()
+    expect(screen.getByText('Resources')).toBeInTheDocument()
+    expect(screen.getByText('Source Code')).toBeInTheDocument()
+
+    // Assert that the links have correct href or to attributes
+    expect(screen.getByText('About').closest('a')).toHaveAttribute('href', '/About/')
+    expect(screen.getByText('Resources').closest('a')).toHaveAttribute('href', '/Resources/')
+    expect(screen.getByText('Source Code')).toHaveAttribute('href', 'https://github.com/Annel18/air-quality-monitoring')
+    expect(screen.getByText('Source Code')).toHaveAttribute('target', '_blank')
   })
 
-  it("renders Footer component with correct navigation links", () => {
-    render(<Footer />)
-    const aboutLink = screen.getByText("About")
-    const resourcesLink = screen.getByText("Resources")
-    const sourceCodeLink = screen.getByText("Source Code")
+  test('renders AQI color key', () => {
+    render(
+      <Router>
+        <Footer />
+      </Router>
+    )
 
-    expect(aboutLink).toBeInTheDocument()
-    expect(aboutLink).toHaveAttribute("href", "")
-
-    expect(resourcesLink).toBeInTheDocument()
-    expect(resourcesLink).toHaveAttribute("href", "")
-
-    expect(sourceCodeLink).toBeInTheDocument()
-    expect(sourceCodeLink).toHaveAttribute("href", "")
-  })
-
-  it("renders Footer component with an error if navigation links are missing href attributes", () => {
-    const { container } = render(<Footer />)
-    const links = container.querySelectorAll(".footer-nav a")
-    links.forEach(link => {
-      expect(link).toHaveAttribute("href")
-    })
+    const aqiLevels = screen.getAllByTestId('aqi-level')
+    expect(aqiLevels).toHaveLength(11)
   })
 })

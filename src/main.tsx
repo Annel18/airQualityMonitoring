@@ -6,6 +6,8 @@ import { RouterProvider } from 'react-router-dom'
 import App from './components/App/index'
 import PageRealTime from './components/PageRealTime/index'
 import PageForecast from './components/PageForecast/index'
+import PageAbout from './components/PageAbout/index'
+import PageResources from './components/PageResources/index'
 
 //! Loaders
 import { getCityFeed } from './utils/loaders/getCityFeed'
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
               path: '/forecast',
               element: <PageForecast />,
               // loader: getCityFeed,
+          },
+          {
+              path: '/about',
+              element: <PageAbout />,
+          },
+          {
+              path: '/resources',
+              element: <PageResources />,
           }
       ]
   }
