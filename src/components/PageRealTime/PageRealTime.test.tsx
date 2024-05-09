@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
-import PageRealTime from './PageRealTime'
+import PageRealTime from "./index"
 
 import '@testing-library/jest-dom/extend-expect'
 
