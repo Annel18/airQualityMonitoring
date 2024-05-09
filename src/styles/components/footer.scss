@@ -6,6 +6,15 @@ footer{
     align-items: baseline;
     justify-content:space-evenly;
   }
+  button {
+    border: 2px solid transparent;
+  
+    &:hover {
+      border-radius: 0px;
+      box-shadow: 5px 5px 10px #5a5a5a,
+        -5px -5px 10px #ffffff;
+    }
+  }
 }
 
 footer > *{
@@ -39,14 +48,3 @@ footer > *{
     border-top: none;
   }
 }
-
-button {
-  border: 2px solid transparent;
-  &:hover{
-    border: 2px solid $primary-color;
-  }
-}
-
-// button:hover{
-//   border: 1px solid $primary-color;
-// }
