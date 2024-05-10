@@ -13,6 +13,7 @@ const ModalAqi: React.FC<Props> = ({ open, handleClose, level }) => {
   return (
     <>
       <Modal
+        centered
         size="lg"
         show={open}
         onHide={handleClose}
