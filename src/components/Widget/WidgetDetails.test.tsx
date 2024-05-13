@@ -1,38 +1,44 @@
-import { render, screen, waitFor } from '@testing-library/react'
-import WidgetDetails from './WidgetDetails'
-import '@testing-library/jest-dom/extend-expect'
+import { render, waitFor } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom';
+import WidgetDetails from './index'
+import '@testing-library/jest-dom/extend-expect';
 
-jest.mock('react-router-dom', () => ({
-  useLoaderData: jest.fn(() => ({
+jest.mock('../../utils/loaders/loadExternalScript', () => ({
+  loadExternalScript: jest.fn(),
+}))
+
+jest.mock('../../utils/loaders/getCityFeed', () => ({
+  getCityFeed: jest.fn(() => Promise.resolve({
+    status: 'ok',
     data: {
-      city: {
-        name: 'London', // Mock city name
-      },
+      city: { name: 'London' },
     },
   })),
 }))
 
-describe('WidgetDetails', () => {
-  beforeAll(() => {
-    // Mock the _aqiFeed function
-    window._aqiFeed = jest.fn()
-  })
+// Mock _aqiFeed function
+window._aqiFeed = jest.fn()
 
-  it('renders widget container', async () => {
-    render(<WidgetDetails />)
-    
-    // Check if the container element is present
-    const container = screen.getByTestId('city-aqi-container-detailed')
-    expect(container).toBeInTheDocument()
-    
-    // Check if loadExternalScript is called with the correct arguments
+describe('WidgetDetails', () => {
+  it('fetches city feed data and loads external script when location prop changes', async () => {
+    render(
+      <MemoryRouter>
+        <WidgetDetails location="London" />
+      </MemoryRouter>
+    )
+
+    // Wait for the component to render and the effects to be executed
     await waitFor(() => {
-      expect(window._aqiFeed).toHaveBeenCalledWith(expect.objectContaining({
-        city: 'London',
-        lang: 'en',
+      // Assert that the container element is present
+      expect(document.getElementById('city-aqi-container-detailed')).toBeInTheDocument()
+
+      // Assert that _aqiFeed is called with the expected arguments
+      expect(window._aqiFeed).toHaveBeenCalledWith({
         container: 'city-aqi-container-detailed',
+        city: 'london',
+        lang: 'en',
         callback: expect.any(Function),
-      }))
+      })
     })
   })
 })
