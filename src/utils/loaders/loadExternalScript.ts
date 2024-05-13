@@ -6,7 +6,6 @@ export function loadExternalScript(w: { [key: string]: any }, d: Document, t: st
     k = s['k'] = (s['k'] || (k ? ('&k=' + k) : ''));
     s['c'] = c = (c instanceof Array) ? c : [c];
     s['n'] = n = n || 0;
-    console.log('Calling createElement'); // Add this line for debugging
     const L = d.createElement(t) as HTMLScriptElement;
     const e = d.getElementsByTagName(t)[0];
     if (e) {

@@ -1,6 +1,6 @@
 
 import { render, fireEvent } from '@testing-library/react'
-import Navbar from './Navbar'
+import Navbar from './index'
 import { BrowserRouter as Router } from 'react-router-dom'
 import '@testing-library/jest-dom/extend-expect'
 

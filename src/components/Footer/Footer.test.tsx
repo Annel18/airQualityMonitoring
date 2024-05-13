@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import Footer from "./Footer"
+import Footer from "./index"
 import aqiColorKey from '../../assets/data/aqiColorKey'
 
 import '@testing-library/jest-dom/extend-expect'
