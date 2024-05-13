@@ -3,26 +3,24 @@ import WidgetDetails from "../Widget/WidgetDetails";
 import SearchBar from "../SearchBar/SearchBar";
 
 const PageRealTime: React.FC = () => {
-  const [location, setLocation] = useState('here');
-
-  // Function to handle location change
-  const handleLocationChange = (newLocation: string) => {
-    setLocation(newLocation);
-  };
+  const [searchedLocation, setSearchedLocation] = useState('')
+  const handleSearchedLocationChange = (newLocation: string) => {
+    setSearchedLocation(newLocation)
+  }
 
   return (
     <>
-      <SearchBar onLocationChange={handleLocationChange} /> {/* Pass callback function */}
+      <SearchBar onLocationChange={handleSearchedLocationChange} />
       <h1>Your Searched Data</h1>
       <div>
-        <WidgetDetails location={location} />
+        <WidgetDetails key={searchedLocation} location={searchedLocation} />
       </div>
       <h1>Your Local Data</h1>
       <div>
-        <WidgetDetails location={'here'} />
+        <WidgetDetails key={'here'} location={'here'} />
       </div>
     </>
-  );
-};
+  )
+}
 
 export default PageRealTime;
