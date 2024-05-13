@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import Footer from "./index"
-import aqiColorKey from '../../assets/data/aqiColorKey'
+import { BrowserRouter } from 'react-router-dom'
 
 
 import '@testing-library/jest-dom/extend-expect'
@@ -8,9 +8,9 @@ import '@testing-library/jest-dom/extend-expect'
 describe('Footer component', () => {
   it('renders footer links', () => {
     render(
-      <Router>
+      <BrowserRouter>
         <Footer />
-      </Router>
+      </BrowserRouter>
     )
 
     // Assert that the links are rendered
@@ -27,9 +27,9 @@ describe('Footer component', () => {
 
   it('renders AQI color key', () => {
     render(
-      <Router>
+      <BrowserRouter>
         <Footer />
-      </Router>
+      </BrowserRouter>
     )
 
     const aqiLevels = screen.getAllByTestId('aqi-level')
@@ -38,9 +38,9 @@ describe('Footer component', () => {
 
   it('opens modal when AQI level button is clicked', () => {
     render(
-      <Router>
+      <BrowserRouter>
         <Footer />
-      </Router>
+      </BrowserRouter>
     )
 
     // Get the first AQI level button and click it
@@ -53,9 +53,9 @@ describe('Footer component', () => {
 
   it('closes modal when close button in modal is clicked', async () => {
     render(
-      <Router>
+      <BrowserRouter>
         <Footer />
-      </Router>
+      </BrowserRouter>
     )
 
     // Get the first AQI level button and click it to open the modal
