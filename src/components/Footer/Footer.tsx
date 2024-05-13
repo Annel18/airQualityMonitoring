@@ -1,5 +1,4 @@
 import { FC } from 'react';
-// import airQualityLevels from '../../assets/data/airQualityLevels';
 import aqiColorKey from '../../assets/data/aqiColorKey';
 
 interface Level {
