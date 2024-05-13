@@ -1,38 +1,39 @@
-import { FC } from 'react';
-// import airQualityLevels from '../../assets/data/airQualityLevels';
+import { Link } from 'react-router-dom';
 import aqiColorKey from '../../assets/data/aqiColorKey';
 
 interface Level {
-    aqi: string;
-    backgroundColor: string;
-    textColor: string;
+  aqi: string;
+  backgroundColor: string;
+  textColor: string;
+  level: object;
 }
 
-const Footer: FC = () => {
-    return (
-        <footer>
-            <div className="levels-key">
-                {aqiColorKey.map((level: Level, i: number) => {
-                    return (
-                        <p
-                            key={i}
-                            className="levels-aqi"
-                            style={{ backgroundColor: level.backgroundColor, color: level.textColor }}
-                        >{level.aqi}</p>
-                    );
-                })}
-            </div>
-            <nav className="footer-nav">
-                <p>|</p>
-                <a href="">About </a>
-                <p>|</p>
-                <a href="">Resources</a>
-                <p>|</p>
-                <a href="">Source Code</a>
-                <p>|</p>
-            </nav>
-        </footer>
-    );
+export default function Footer() {
+  return (
+    <footer>
+      <div className="levels-key">
+        {aqiColorKey.map((level: Level, i: number) => (
+          <p
+            key={i}
+            className="levels-aqi"
+            style={{ backgroundColor: level.backgroundColor, color: level.textColor }}
+            data-testid="aqi-level" // Add data-testid here
+          >
+            {level.aqi}
+          </p>
+        ))}
+      </div>
+      <nav className="footer-nav">
+        <p>|</p>
+        <Link to="/About/">About</Link>
+        <p>|</p>
+        <Link to="/Resources/">Resources</Link>
+        <p>|</p>
+        <a href="https://github.com/Annel18/air-quality-monitoring" target="_blank" rel="noopener noreferrer">
+          Source Code
+        </a>
+        <p>|</p>
+      </nav>
+    </footer>
+  );
 }
-
-export default Footer;

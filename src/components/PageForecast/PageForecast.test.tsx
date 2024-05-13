@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react"
-import PageForecast from "./PageForecast"
+import PageForecast from "./index"
 import '@testing-library/jest-dom/extend-expect'
 
 describe("PageForecast", () => {
