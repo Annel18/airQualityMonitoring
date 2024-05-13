@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from "@testing-library/react"
 import Footer from "./index"
-import { BrowserRouter as Router } from 'react-router-dom'
+import aqiColorKey from '../../assets/data/aqiColorKey'
+
 
 import '@testing-library/jest-dom/extend-expect'
 

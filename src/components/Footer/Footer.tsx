@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
-import aqiColorKey from '../../assets/data/aqiColorKey';
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
+import aqiColorKey from '../../assets/data/aqiColorKey'
 
 interface Level {
   aqi: string;
