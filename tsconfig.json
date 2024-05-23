@@ -1,0 +1,43 @@
+{
+  "module": "commonjs",
+  "preserveValueImports": false,
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "types": [
+      "jest", 
+      "node", 
+      "@types/testing-library__jest-dom"],
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": [
+      "es6",
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    // "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": ["cypress", "node_modules"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
