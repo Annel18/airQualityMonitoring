@@ -1,3 +1,6 @@
+// function given by the API documentation
+// https://aqicn.org/faq/2015-09-18/map-web-service-real-time-air-quality-tile-api/
+
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
