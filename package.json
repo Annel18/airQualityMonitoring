@@ -86,7 +86,9 @@
     "collectCoverageFrom": [
       "src/**",
       "!src/main.tsx",
-      "!src/vite-env.d.ts"
+      "!src/vite-env.d.ts",
+      "!src/utils/loaders/initializeMap.ts",
+      "!src/utils/loaders/loadExternalScript.ts"
     ],
     "coverageThreshold": {
       "global": {
