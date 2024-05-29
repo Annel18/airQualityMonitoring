@@ -20,7 +20,7 @@ main {
 }
 
 .spinner {
-    padding-top: 5em;
+    height: calc(100vh - 91.25px - 61.55px);
     @include flex(row, center, center);
 }
 
