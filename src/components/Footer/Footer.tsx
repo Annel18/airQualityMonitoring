@@ -30,9 +30,8 @@ export default function Footer() {
     <footer>
       <div className="levels-key">
         {aqiColorKey.map((level: KeyLevel, i: number) => (
-          <div key={i}>
+          <div key={i} className="levels-aqi">
             <button
-              className="levels-aqi"
               style={{ backgroundColor: level.backgroundColor, color: level.textColor }}
               data-testid="aqi-level"
               onClick={() => handleOpen(level)}
