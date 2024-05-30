@@ -38,7 +38,7 @@ const Maps: React.FC<Props> = ({ id, location }) => {
     }
   }, [data, id, token])
 
-  return <div id={id} style={{ height: '380px', width: '380px' }} />
+  return <div id={id} data-testid='maptest' style={{ height: '380px', width: '380px' }} />
 }
 
 export default Maps
