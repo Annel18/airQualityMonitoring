@@ -1,27 +1,51 @@
 import { render, screen, waitFor } from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
+import { MemoryRouter } from 'react-router-dom'
 import PageRealTime from './index'
 
 import '@testing-library/jest-dom/extend-expect'
 
+// @ts-expect-error
+import { getCityFeed } from '../../utils/loaders/getCityFeed'
+
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useLoaderData: jest.fn(() => ({ status: 'ok' })), // Corrected mock to return 'ok' status
+  useLoaderData: jest.fn(() => ({ status: 'ok' })),
+}))
+
+jest.mock('../../utils/loaders/getCityFeed', () => ({
+  getCityFeed: jest.fn().mockResolvedValue({
+    data: {
+      city: {
+        name: 'Test City',
+      },
+      aqi: 85,
+      iaqi: {
+        pm25: { v: 40 },
+        pm10: { v: 20 },
+        o3: { v: 10 },
+        no2: { v: 15 },
+        so2: { v: 5 },
+        co: { v: 1 },
+      },
+      time: {
+        s: '2024-05-29 12:00:00',
+      },
+    },
+  }),
 }))
 
 describe('PageRealTime', () => {
   it('renders PageRealTime component with correct data status', async () => {
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <PageRealTime />
-      </BrowserRouter>
+      </MemoryRouter>
     )
 
     await waitFor(() => {
-      expect(screen.getByText('Your Searched Data')).toBeInTheDocument()
-      expect(screen.getByText('Your Local Data')).toBeInTheDocument()
-      // Update the assertion to match the actual text content rendered in the component
-      expect(screen.queryByText('ok')).not.toBeInTheDocument() // Updated to check for 'ok' status
+      expect(screen.getByRole('textbox')).toBeInTheDocument()
+      expect(screen.getByText('The MAP will come here')).toBeInTheDocument()
+      expect(screen.getByRole('heading', { name: 'Test City Air Quality' })).toBeInTheDocument()
     })
   })
 })
