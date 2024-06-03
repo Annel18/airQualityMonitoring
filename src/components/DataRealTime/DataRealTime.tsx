@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { getCityFeed } from '../../utils/loaders/getCityFeed';
+import { getCityFeedId } from '../../utils/loaders/getCityFeed';
 import aqiColorKey from "../../assets/data/aqiColorKey";
 
 interface Props {
-  location: string;
+  stationId: number;
 }
 
-const DataRealTime: React.FC<Props> = ({ location }) => {
+const DataRealTime: React.FC<Props> = ({ stationId }) => {
   const [data, setData] = useState<any>();
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await getCityFeed(location);
+        const res = await getCityFeedId(stationId);
         setData(res);
       } catch (error) {
         console.error('Error fetching city feed:', error);
       }
     }
     fetchData();
-  }, [location]);
+  }, [stationId]);
 
   if (!data) {
     return <div>Loading...</div>;
