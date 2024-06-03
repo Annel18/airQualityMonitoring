@@ -1,8 +1,17 @@
-import axios from 'axios'
+import { LoaderFunctionArgs } from 'react-router-dom';
+import { TOKEN, API_URL } from '../../constants/api';
+import { get } from '../httpMethods';
 
-export async function getCityFeed(location: string) {
-  const token = process.env.API_KEY
-  // const url = process.env.API_URL_LOCAL
-  const response = await axios.get(`https://api.waqi.info/feed/${location}/?token=${token}`)
-  return response.data
+export const getCityFeed = async (input: LoaderFunctionArgs | string) => {
+  let location: string;
+  if (typeof input === 'string') {
+    location = input;
+  } else {
+    const { request, params } = input;
+    const url = new URL(request.url);
+    location = params.location || url.searchParams.get('location') || 'defaultLocation';
+  }
+
+  const response = await get(`${API_URL}${location}/?token=${TOKEN}`);
+  return response.data;
 }

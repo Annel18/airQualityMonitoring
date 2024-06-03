@@ -13,7 +13,9 @@ const PageRealTime: React.FC = () => {
       <SearchBar onLocationChange={handleSearchedLocationChange} />
       <div className="page-realtime">
         <div className="map-large">The MAP will come here</div>
-        <DataRealTime key={searchedLocation} location={searchedLocation} />
+        <div className="data-realtime">
+          <DataRealTime key={searchedLocation} location={searchedLocation} />
+        </div>
       </div>
     </>
   )

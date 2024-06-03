@@ -33,7 +33,7 @@ describe('DataRealTime component', () => {
 
   test('renders loading state initially', () => {
     render(<DataRealTime location="test-location" />);
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+    expect(screen.getByTestId('loading')).toBeInTheDocument();
   });
 
   test('fetches and displays city feed data', async () => {
@@ -78,7 +78,7 @@ describe('DataRealTime component', () => {
 
     await waitFor(() => expect(console.error).toHaveBeenCalledWith('Error fetching city feed:', expect.any(Error)));
 
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+    expect(screen.getByTestId('loading')).toBeInTheDocument();
   });
 
   test('displays correct AQI level and background color', async () => {
