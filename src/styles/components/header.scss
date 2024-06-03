@@ -1,11 +1,16 @@
 .navbar {
-  @include flex(row, center, space-between);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: $navBar-color;
   padding: 1rem 5rem;
 }
 
 .navbar-menu {
-  @include flex(row, center, flex-start);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
 
   .form-control {
     color: white;

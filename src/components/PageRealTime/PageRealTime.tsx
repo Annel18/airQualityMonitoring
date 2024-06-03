@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import WidgetDetails from "../Widget/WidgetDetails"
 import SearchBar from "../SearchBar/SearchBar"
+import DataRealTime from "../DataRealTime/DataRealTime"
+import WidgetDetails from "../Widget/WidgetDetails"
 import Maps from "../Maps/Maps"
 
 const PageRealTime: React.FC = () => {
-  const [searchedLocation, setSearchedLocation] = useState('')
+  const [searchedLocation, setSearchedLocation] = useState('here')
   const handleSearchedLocationChange = (newLocation: string) => {
     setSearchedLocation(newLocation)
   }
@@ -12,7 +13,13 @@ const PageRealTime: React.FC = () => {
   return (
     <>
       <SearchBar onLocationChange={handleSearchedLocationChange} />
-      <h1>Your Searched Data</h1>
+      <div className="page-realtime">
+        <div className="map-large">
+          <Maps key={`map-${searchedLocation}`} id={`map-${searchedLocation}`} location={searchedLocation} />
+        </div>
+        <DataRealTime key={searchedLocation} location={searchedLocation} />
+      </div>
+      {/* <h1>Your Searched Data</h1>
       <div style={{ display: 'flex' }}>
         <Maps key={`map-${searchedLocation}`} id={`map-${searchedLocation}`} location={searchedLocation} />
         <WidgetDetails key={`widget-${searchedLocation}`} location={searchedLocation} />
@@ -21,7 +28,7 @@ const PageRealTime: React.FC = () => {
       <div style={{ display: 'flex' }}>
         <Maps key="map-here" id="map-here" location="here" />
         <WidgetDetails key="widget-here" location="here" />
-      </div>
+      </div> */}
     </>
   )
 }

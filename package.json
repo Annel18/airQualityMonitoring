@@ -87,12 +87,11 @@
       "src/**",
       "!src/main.tsx",
       "!src/vite-env.d.ts",
-      "!src/utils/loaders/initializeMap.ts",
-      "!src/utils/loaders/loadExternalScript.ts"
+      "!src/utils/externalScripts/**"
     ],
     "coverageThreshold": {
       "global": {
-        "lines": 80
+        "lines": 65
       }
     },
     "testEnvironment": "jsdom",

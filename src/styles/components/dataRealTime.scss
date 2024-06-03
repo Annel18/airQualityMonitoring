@@ -1,0 +1,47 @@
+.level-stamp{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: large;
+  min-width: 200px;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  :first-child{
+    font-size: xx-large;
+    font-weight: bolder;
+  }
+}
+
+.polluant-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  tr {
+    border-bottom: 1px dashed black;
+    td{
+      text-align: right;
+    }
+    td:first-child{
+      width: 82px;
+    }
+  }
+}
+
+.map-large {
+  min-height: 380px;
+  width: calc(100vw - 2rem);
+  margin-bottom: 1rem;
+  border: 1px solid black;
+  @media (min-width:1024px) {
+    width: calc(100vw/2 - 2rem);
+    margin-right: 7rem;
+  }
+}
+
+.page-realtime{
+  display: flex;
+  flex-direction: column;
+  @media (min-width:1024px) {
+    flex-direction: row;
+  }
+}
