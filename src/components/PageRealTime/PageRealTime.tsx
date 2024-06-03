@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import SearchBar from "../SearchBar/SearchBar"
 import DataRealTime from "../DataRealTime/DataRealTime"
-import WidgetDetails from "../Widget/WidgetDetails"
+// import WidgetDetails from "../Widget/WidgetDetails"
 import Maps from "../Maps/Maps"
 
 const PageRealTime: React.FC = () => {

@@ -17,6 +17,7 @@ jest.mock('../../utils/loaders/getCityFeed', () => ({
     data: {
       city: {
         name: 'Test City',
+        geo: [51.502105, -0.140002]
       },
       aqi: 85,
       iaqi: {
@@ -44,8 +45,7 @@ describe('PageRealTime', () => {
 
     await waitFor(() => {
       expect(screen.getByRole('textbox')).toBeInTheDocument()
-      expect(screen.getByText('The MAP will come here')).toBeInTheDocument()
-      expect(screen.getByRole('heading', { name: 'Test City Air Quality' })).toBeInTheDocument()
+      expect(screen.getByRole('heading', {name:'Test City Air Quality'})).toBeInTheDocument()
     })
   })
 })
