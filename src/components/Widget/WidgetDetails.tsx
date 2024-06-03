@@ -12,7 +12,7 @@ declare global {
   }
 }
 import React, { useEffect, useState } from "react";
-import { loadExternalScript } from '../../utils/loaders/loadExternalScript';
+import { loadExternalScript } from '../../utils/externalScripts/loadExternalScript';
 import { getCityFeed } from '../../utils/loaders/getCityFeed';
 
 function cleanCityName(name: string): string {
