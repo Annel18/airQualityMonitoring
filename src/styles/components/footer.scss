@@ -1,5 +1,6 @@
 footer{
-  @media (min-width: 600px) {
+  width: 100vw;
+  @media (min-width: 1024px) {
     border-top: 1px solid black;
     display:flex;
     flex-direction: row-reverse;
@@ -23,15 +24,23 @@ footer > *{
 
 .levels-key{
   display: flex;
-  max-width: 600px;
+  max-width: 100vw;
+  margin: 0 1rem;
 }
 
 .levels-aqi{
-  padding: 0.5rem;
+  // padding: 0.5rem;
   font-size:7.7px;
-  width: calc(600px / 11);
   text-align: center;
   margin: 1rem 0.1rem;
+  button {
+    height: 100%;
+    width: calc(100vw / 13);
+    @media (min-width:1024px) {
+      width: calc(600px / 11);
+      height: auto;
+    }
+  }
 }
 
 .footer-nav{
@@ -44,7 +53,7 @@ footer > *{
     padding: 1rem;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 1024px) {
     border-top: none;
   }
 }

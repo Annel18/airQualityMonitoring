@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import WidgetDetails from './index'
 import '@testing-library/jest-dom/extend-expect';
 
-jest.mock('../../utils/loaders/loadExternalScript', () => ({
+jest.mock('../../utils/externalScripts/loadExternalScript', () => ({
   loadExternalScript: jest.fn(),
 }))
 
