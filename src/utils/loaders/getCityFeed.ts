@@ -1,6 +1,6 @@
-import axios from 'axios';
 import { LoaderFunctionArgs } from 'react-router-dom';
 import { TOKEN, API_URL } from '../../constants/api';
+import { get } from '../httpMethods';
 
 export const getCityFeed = async (input: LoaderFunctionArgs | string) => {
   let location: string;
@@ -12,6 +12,6 @@ export const getCityFeed = async (input: LoaderFunctionArgs | string) => {
     location = params.location || url.searchParams.get('location') || 'defaultLocation';
   }
 
-  const response = await axios.get(`${API_URL}${location}/?token=${TOKEN}`);
+  const response = await get(`${API_URL}${location}/?token=${TOKEN}`);
   return response.data;
-};
+}

@@ -1,9 +1,9 @@
-import axios from 'axios';
-import { AxiosResponse } from 'axios';
 import { getCityFeed } from './getCityFeed';
+import * as httpMethods from '../httpMethods';
+import { AxiosResponse } from 'axios';
 
-// Mock the axios library
-jest.mock('axios');
+// Mock the methods library
+jest.mock('../httpMethods');
 
 // Mock the environment variables
 jest.mock('../../constants/api', () => ({
@@ -16,16 +16,20 @@ describe('getCityFeed function', () => {
     jest.clearAllMocks();
   });
   
-  it('should call axios.get with the correct URL', async () => {
+  it('should call get with the correct URL', async () => {
     const mockData = { mockData: 'mockValue' };
-    (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({ data: mockData } as AxiosResponse<any>);
+    (httpMethods.get as jest.MockedFunction<typeof httpMethods.get>).mockResolvedValueOnce({
+      data: mockData,
+    } as AxiosResponse);
     await getCityFeed('Paris');
-    expect(axios.get).toHaveBeenCalledWith('https://api.waqi.info/feed/Paris/?token=mockApiKey');
+    expect(httpMethods.get).toHaveBeenCalledWith('https://api.waqi.info/feed/Paris/?token=mockApiKey');
   });
 
   it('should return data from the response', async () => {
     const mockData = { mockData: 'mockValue' };
-    (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({ data: mockData } as AxiosResponse<any>);
+    (httpMethods.get as jest.MockedFunction<typeof httpMethods.get>).mockResolvedValueOnce({
+      data: mockData,
+    } as AxiosResponse);
     const result = await getCityFeed('Paris');
     expect(result).toEqual(mockData);
   });
@@ -42,7 +46,9 @@ describe('getCityFeed function', () => {
         ],
       },
     };
-    (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({ data: responseData } as AxiosResponse<any>);
+    (httpMethods.get as jest.MockedFunction<typeof httpMethods.get>).mockResolvedValueOnce({
+      data: responseData,
+    } as AxiosResponse);
     const result = await getCityFeed('Paris');
 
     expect(result.status).toEqual('ok');
@@ -52,9 +58,9 @@ describe('getCityFeed function', () => {
     });
   });
 
-  it('should throw an error if axios.get fails', async () => {
+  it('should throw an error if get fails', async () => {
     const errorMessage = 'Network Error';
-    (axios.get as jest.MockedFunction<typeof axios.get>).mockRejectedValueOnce(new Error(errorMessage));
+    (httpMethods.get as jest.MockedFunction<typeof httpMethods.get>).mockRejectedValueOnce(new Error(errorMessage));
     await expect(getCityFeed('Paris')).rejects.toThrow(errorMessage);
   });
 });
