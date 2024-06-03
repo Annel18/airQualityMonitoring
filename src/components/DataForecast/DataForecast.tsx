@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { getCityFeed } from '../../utils/loaders/getCityFeed'
+import { Spin } from 'antd';
 
 interface Props {
   location: string;
@@ -21,7 +22,7 @@ const DataForecast: React.FC<Props> = ({ location }) => {
   }, [location])
 
   if (!data) {
-    return <div>Loading...</div>
+    return <div data-testid='loading'><Spin /></div>
   }
 
   return (
