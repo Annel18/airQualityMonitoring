@@ -2,6 +2,13 @@
   "module": "commonjs",
   "preserveValueImports": false,
   "compilerOptions": {
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/@types", "*"]
+    },
+    // "module": "ESNext",
     "esModuleInterop": true,
     "types": [
       "jest", 
@@ -16,7 +23,6 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "node",
     // "allowImportingTsExtensions": true,
