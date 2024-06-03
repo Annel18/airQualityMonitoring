@@ -6,3 +6,10 @@ export async function getCityFeed(location: string) {
   const response = await axios.get(`https://api.waqi.info/feed/${location}/?token=${token}`)
   return response.data
 }
+
+export async function getCityFeedId(stationId: number) {
+  const token = process.env.API_KEY
+  // const url = process.env.API_URL_LOCAL
+  const response = await axios.get(`https://api.waqi.info/feed/@${stationId}/?token=${token}`)
+  return response.data
+}
