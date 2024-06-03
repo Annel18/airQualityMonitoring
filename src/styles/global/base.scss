@@ -13,14 +13,21 @@ body {
 }
 
 main {
-    // min-height: calc(100vh - 126.94px - 169.41px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    
     @media (min-width: 600px) {
+      // flex-direction: row;
       min-height: calc(100vh - 126.94px - 73.45px);
     }
 }
 
 .spinner {
     padding-top: 5em;
-    @include flex(row, center, center);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 

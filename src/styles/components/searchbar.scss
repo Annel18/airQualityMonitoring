@@ -1,20 +1,10 @@
 .filter-bar {
-  @include flex(row, center, space-between);
-  padding: 1em 5em;
-
-
-  .search {
-      align-self: flex-start;
-      // width: calc(100vw - 20em);
-          }
-
-  button {
-      @include button($secondary-color, white);
-      padding: 1em 2em;
-      // margin-right: 1em;
-  }
-
-  button:hover {
-      @include button(white, $secondary-color);
+  width: 100vw;
+  padding: 1rem;
+  input{
+    width: -webkit-fill-available;
+    height: 3rem;
+    border-radius: 1rem;
+    padding: 1rem;
   }
 }

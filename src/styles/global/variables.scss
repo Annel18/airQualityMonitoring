@@ -6,9 +6,3 @@ $secondary-color: lightcoral;
 $tertiary-color: rgb(100, 186, 186);
 $navBar-color: #000000;
 
-@mixin flex($direction, $align, $justify) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
-}
