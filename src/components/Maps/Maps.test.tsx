@@ -1,11 +1,11 @@
 import { render, waitFor } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import { getCityFeed as mockGetCityFeed } from '../../utils/loaders/getCityFeed'
-import { initializeMap as mockInitializeMap } from '../../utils/loaders/initializeMap'
+import { initializeMap as mockInitializeMap } from '../../utils/externalScripts/initializeMap'
 import Maps from './Maps'
 
 jest.mock('../../utils/loaders/getCityFeed')
-jest.mock('../../utils/loaders/initializeMap')
+jest.mock('../../utils/externalScripts/initializeMap')
 
 describe('Maps component', () => {
   beforeEach(() => {

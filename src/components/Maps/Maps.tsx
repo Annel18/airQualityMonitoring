@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getCityFeed } from '../../utils/loaders/getCityFeed'
-import { initializeMap } from '../../utils/loaders/initializeMap'
+import { initializeMap } from '../../utils/externalScripts/initializeMap'
 
 interface Props {
   id: string
@@ -38,7 +38,7 @@ const Maps: React.FC<Props> = ({ id, location }) => {
     }
   }, [data, id, token])
 
-  return <div id={id} data-testid='maptest' style={{ height: '380px', width: '380px' }} />
+  return <div id={id} data-testid='maptest' style={{ height: '100%', width: '100%' }} />
 }
 
 export default Maps
