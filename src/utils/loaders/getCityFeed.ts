@@ -1,9 +1,8 @@
 import axios from 'axios';
 import { LoaderFunctionArgs } from 'react-router-dom';
+import { TOKEN, API_URL } from '../../constants/api';
 
 export const getCityFeed = async (input: LoaderFunctionArgs | string) => {
-  const token = process.env.API_KEY;
-
   let location: string;
   if (typeof input === 'string') {
     location = input;
@@ -13,6 +12,6 @@ export const getCityFeed = async (input: LoaderFunctionArgs | string) => {
     location = params.location || url.searchParams.get('location') || 'defaultLocation';
   }
 
-  const response = await axios.get(`https://api.waqi.info/feed/${location}/?token=${token}`);
+  const response = await axios.get(`${API_URL}${location}/?token=${TOKEN}`);
   return response.data;
 };
