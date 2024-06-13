@@ -23,7 +23,7 @@
     <a href="https://github.com/annel18/air-quality-monitoring"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/annel18/air-quality-monitoring">View Demo</a>
+    <a href="https://annel18.github.io/air-quality-monitoring/">View Demo</a>
     ·
     <a href="https://github.com/annel18/air-quality-monitoring/issues">Report Bug</a>
     ·
@@ -67,7 +67,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://annel18.github.io/air-quality-monitoring/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
